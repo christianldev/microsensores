@@ -1,8 +1,8 @@
 #include <ESP8266WiFi.h>
 
 //Información de nuestro WIFI
-const char *ssid = "NETLIFE-VILLAMAR";
-const char *password = "'09092017";
+const char *ssid = "CAMPUSECOTEC";
+const char *password = "campusecotec";
 
 //Datos para una IP estática
 IPAddress ip(192,168,0,10);     
@@ -14,6 +14,7 @@ int ledPin = 2;
 
 //Puerto 80 TCP, este puerto se usa para la navegación web http
 WiFiServer server(80);
+AsyncWebServer server(80);
  
 void setup() {
   Serial.begin(115200); //Iniciamos comunicación serial
@@ -91,41 +92,23 @@ void loop() {
   }
 
   // Respuesta del servidor web
+  InitServer();
   
-  client.println("HTTP/1.1 200 OK"); // La respuesta empieza con una linea de estado  
-  client.println("Content-Type: text/html"); //Empieza el cuerpo de la respuesta indicando que el contenido será un documento html
-  client.println(""); // Ponemos un espacio
-  client.println("<!DOCTYPE HTML>"); //Indicamos el inicio del Documento HTML
-  client.println("<html lang=\"en\">");
-  client.println("<head>");
-  client.println("<meta charset=\"UTF-8\">");
-  client.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"); //Para que se adapte en móviles
-  client.println("<title>Servidor Web ESP8266</title>");
-  client.println("</head>");
-  client.println("<body>");
-  client.println("<br><br>");
-  
-  client.println("<h1 style=\"text-align: center;\">Servidor Web ESP8266</h1>");
-  
-  client.println("<p style=\"text-align: center;\">");
-  client.println("Click <a href=\"/LED=ON\">Aqui</a> para encender LED en el pin 2 ON<br>"); //Oración que contiene un hipervínculo
-  client.println("Click <a href=\"/LED=OFF\">Aqui</a> para apagar el led en el pin 2 OFF<br>");
-  client.println("Click <a href=\"/LED=BLINK\">Aqui</a> para parpadar el led en el pin 2<br> <br>");
-  
-
-  client.println("<button onclick=location.href=\"/LED=ON\"> Encender LED</button> <br> <br>"); // Botón sencillo que contiene hipervínculo
-  client.println("<button onclick=location.href=\"/LED=OFF\" >Apagar LED </button> <br> <br>");
-  client.println("<button onclick=location.href=\"/LED=BLINK\">Parpadear LED </button> <br> <br>");
-
-  client.println("</p>");
-  client.println("</body>");
-  
-  client.println("</html>"); //Terminamos el HTML
  
-  delay(1);
-  Serial.println("Cliente desconectado"); //Imprimimos que terminó el proceso con el cliente desconectado
-  Serial.println("");
- 
+}
+
+
+
+void InitServer()
+{
+	server.serveStatic("/", SPIFFS, "/").setDefaultFile("index.html");
+
+	server.onNotFound([](AsyncWebServerRequest *request) {
+		request->send(400, "text/plain", "Not found");
+	});
+
+	server.begin();
+    Serial.println("HTTP server started");
 }
 
  
