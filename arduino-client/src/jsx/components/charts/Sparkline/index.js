@@ -76,7 +76,7 @@ function ChartSparkline() {
             </Card.Header>
             <Card.Body>
               <Sparklines data={sampleData}>
-                <SparklinesLine color="#13b497" />
+                <SparklinesLine color="#1f8cf0" />
               </Sparklines>
             </Card.Body>
           </Card>
@@ -89,7 +89,7 @@ function ChartSparkline() {
             </Card.Header>
             <Card.Body>
               <Sparklines data={sampleData}>
-                <SparklinesLine color="#13b497" />
+                <SparklinesLine color="#1f8cf0" />
                 <SparklinesReferenceLine type="mean" />
               </Sparklines>
             </Card.Body>
@@ -103,7 +103,7 @@ function ChartSparkline() {
             </Card.Header>
             <Card.Body>
               <Sparklines data={sampleData}>
-                <SparklinesLine color="#13b497" style={{ fill: "none" }} />
+                <SparklinesLine color="#1f8cf0" style={{ fill: "none" }} />
                 <SparklinesSpots />
               </Sparklines>
             </Card.Body>
@@ -117,8 +117,8 @@ function ChartSparkline() {
             </Card.Header>
             <Card.Body>
               <Sparklines data={sampleData}>
-                <SparklinesLine color="#13b497" />
-                <SparklinesSpots style={{ fill: "#13b497" }} />
+                <SparklinesLine color="#1f8cf0" />
+                <SparklinesSpots style={{ fill: "#1f8cf0" }} />
               </Sparklines>
             </Card.Body>
           </Card>
@@ -134,14 +134,14 @@ function ChartSparkline() {
                 <SparklinesLine
                   style={{
                     strokeWidth: 3,
-                    stroke: "#13b497",
+                    stroke: "#1f8cf0",
                     fill: "#1eaae7",
                   }}
                 />
                 <SparklinesSpots
                   size={4}
                   style={{
-                    stroke: "#13b497",
+                    stroke: "#1f8cf0",
                     strokeWidth: 3,
                     fill: "white",
                   }}
@@ -178,7 +178,7 @@ function ChartSparkline() {
                   54,
                 ]}
               >
-                <SparklinesBars style={{ fill: "#13b497" }} />
+                <SparklinesBars style={{ fill: "#1f8cf0" }} />
               </Sparklines>
             </Card.Body>
           </Card>

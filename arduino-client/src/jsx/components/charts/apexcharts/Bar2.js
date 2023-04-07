@@ -29,12 +29,12 @@ class ApexBar2 extends React.Component {
                   },
                },
             },
-            colors: ["#13b497"],
+            colors: ["#1f8cf0"],
             legend: {
                show: false,
                position: "top",
                horizontalAlign: "left",
-               
+
             },
             dataLabels: {
                enabled: false,
@@ -48,40 +48,40 @@ class ApexBar2 extends React.Component {
                show: false,
             },
             yaxis: {
-				
-                lines: {
-                    show: false,
-                },
-                labels: {
-                    style: {
-                         colors: "#b3b3b3",                         
-                    },
-                },
+
+               lines: {
+                  show: false,
+               },
+               labels: {
+                  style: {
+                     colors: "#b3b3b3",
+                  },
+               },
             },
             xaxis: {
                show: false,
                labels: {
-                    style: {
-                        colors: "#b3b3b3",
-                    },
-                },
-				axisBorder: {
-				  show: false,
-				},
-				axisTicks: {
-					show: false,
-				},
+                  style: {
+                     colors: "#b3b3b3",
+                  },
+               },
+               axisBorder: {
+                  show: false,
+               },
+               axisTicks: {
+                  show: false,
+               },
                categories: [2, 4, 6, 8, 10, 12, 14],
-			   
+
             },
-			grid:{
-				yaxis:{
-					lines: {
-						show: false
-					},
-				},
-				
-			},
+            grid: {
+               yaxis: {
+                  lines: {
+                     show: false
+                  },
+               },
+
+            },
          },
       };
    }

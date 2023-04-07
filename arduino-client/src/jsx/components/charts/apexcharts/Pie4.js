@@ -19,7 +19,7 @@ class ApexPie4 extends React.Component {
             labels: ["VIP", "Reguler", "Exclusive", "Economic"],
             fill: {
                opacity: 1,
-               colors: ["#13b497", "#21b830", "#ff7a00", "#ffe600"],
+               colors: ["#1f8cf0", "#21b830", "#ff7a00", "#ffe600"],
             },
             stroke: {
                width: 0,
@@ -57,7 +57,7 @@ class ApexPie4 extends React.Component {
                series={this.state.series}
                type="polarArea"
                height={251}
-               // width={300}
+            // width={300}
             />
          </div>
       );

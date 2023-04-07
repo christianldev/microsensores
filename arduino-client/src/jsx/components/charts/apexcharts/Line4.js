@@ -34,24 +34,24 @@ class ApexLine4 extends React.Component {
 
             stroke: {
                width: [4, 4, 4],
-               colors: ["#13b497", "#21b830", "#FF9432"],
+               colors: ["#1f8cf0", "#21b830", "#FF9432"],
                curve: "straight",
             },
             legend: {
                show: false,
             },
             xaxis: {
-                labels: {
-                    style: {
-                        colors: "#b3b3b3",
-                    },
-                },
-				axisBorder: {
-				  show: false,
-				},
-				axisTicks: {
-					show: false,
-				},
+               labels: {
+                  style: {
+                     colors: "#b3b3b3",
+                  },
+               },
+               axisBorder: {
+                  show: false,
+               },
+               axisTicks: {
+                  show: false,
+               },
                type: "text",
                categories: [
                   "Jan",
@@ -68,35 +68,35 @@ class ApexLine4 extends React.Component {
                   "Dec",
                ],
             },
-            colors: ["#13b497", "#21b830", "#FF9432"],
+            colors: ["#1f8cf0", "#21b830", "#FF9432"],
 
             markers: {
                size: [8, 8, 6],
                strokeWidth: [0, 0, 4],
-               strokeColors: ["#13b497", "#21b830", "#FF9432"],
+               strokeColors: ["#1f8cf0", "#21b830", "#FF9432"],
                border: 0,
-               colors: ["#13b497", "#21b830", "#fff"],
+               colors: ["#1f8cf0", "#21b830", "#fff"],
                hover: {
                   size: 10,
                },
             },
             yaxis: {
-                labels: {
-                    style: {
-                        colors: "#b3b3b3",
-                    },
-                },
+               labels: {
+                  style: {
+                     colors: "#b3b3b3",
+                  },
+               },
                title: {
                   text: "",
                },
             },
-			grid:{
-				yaxis:{
-					lines: {
-						show: false
-					},
-				},
-			},
+            grid: {
+               yaxis: {
+                  lines: {
+                     show: false
+                  },
+               },
+            },
          },
       };
    }

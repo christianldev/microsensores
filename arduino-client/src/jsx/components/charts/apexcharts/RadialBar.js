@@ -36,7 +36,7 @@ class ApexRedialBar extends React.Component {
             },
             fill: {
                type: "gradient",
-               colors: "#13b497",
+               colors: "#1f8cf0",
                gradient: {
                   shade: "dark",
                   shadeIntensity: 0.15,

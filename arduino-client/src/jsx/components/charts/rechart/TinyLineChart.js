@@ -55,7 +55,7 @@ export default class TinyLineChart extends PureComponent {
                <Line
                   type="monotone"
                   dataKey="pv"
-                  stroke="#13B497"
+                  stroke="#1f8cf0"
                   strokeWidth={2}
                />
             </LineChart>

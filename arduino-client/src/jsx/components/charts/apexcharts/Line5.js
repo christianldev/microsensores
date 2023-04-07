@@ -59,7 +59,7 @@ class ApexLine5 extends React.Component {
             },
             stroke: {
                width: [2, 2],
-               colors: ["#1eaae7", "#13b497"],
+               colors: ["#1eaae7", "#1f8cf0"],
                curve: "straight",
             },
             legend: {
@@ -68,13 +68,13 @@ class ApexLine5 extends React.Component {
                      val +
                      " - " +
                      opts.w.globals.series[opts.seriesIndex][
-                        opts.dataPointIndex
+                     opts.dataPointIndex
                      ] +
                      ""
                   );
                },
                markers: {
-                  fillColors: ["#1eaae7", "#13b497"],
+                  fillColors: ["#1eaae7", "#1f8cf0"],
                   width: 19,
                   height: 19,
                   strokeWidth: 0,
@@ -87,23 +87,23 @@ class ApexLine5 extends React.Component {
             markers: {
                size: 6,
                border: 0,
-               colors: ["#1eaae7", "#13b497"],
+               colors: ["#1eaae7", "#1f8cf0"],
                hover: {
                   size: 6,
                },
             },
             xaxis: {
-                labels: {
-                    style: {
-                         colors: "#b3b3b3",
-                    },
-                },
-				axisBorder: {
-				  show: false,
-				},
-				axisTicks: {
-					show: false,
-				},
+               labels: {
+                  style: {
+                     colors: "#b3b3b3",
+                  },
+               },
+               axisBorder: {
+                  show: false,
+               },
+               axisTicks: {
+                  show: false,
+               },
                categories: [
                   "January",
                   "February",
@@ -126,23 +126,23 @@ class ApexLine5 extends React.Component {
                labels: {
                   style: {
                      colors: "#b3b3b3",
-                    
+
                   },
                },
             },
-			grid:{
-				yaxis:{
-					lines: {
-						show: false
-					},
-				},
-			},
+            grid: {
+               yaxis: {
+                  lines: {
+                     show: false
+                  },
+               },
+            },
             fill: {
-               colors: ["#1eaae7", "#13b497"],
+               colors: ["#1eaae7", "#1f8cf0"],
                type: "solid",
                opacity: 0.07,
             },
-            
+
          },
       };
    }

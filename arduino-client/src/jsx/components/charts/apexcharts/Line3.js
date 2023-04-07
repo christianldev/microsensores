@@ -26,22 +26,22 @@ class ApexLine3 extends React.Component {
 
         stroke: {
           width: [4],
-          colors: ["#13b497"],
+          colors: ["#1f8cf0"],
           curve: "straight",
         },
 
         xaxis: {
-            labels: {
-                style: {
-                    colors: "#b3b3b3",
-                },
+          labels: {
+            style: {
+              colors: "#b3b3b3",
             },
-			axisBorder: {
-			  show: false,
-			},
-			axisTicks: {
-				show: false,
-			},
+          },
+          axisBorder: {
+            show: false,
+          },
+          axisTicks: {
+            show: false,
+          },
           type: "text",
           categories: [
             "Jan",
@@ -62,7 +62,7 @@ class ApexLine3 extends React.Component {
         markers: {
           size: [6],
           strokeWidth: [4],
-          strokeColors: ["#13b497"],
+          strokeColors: ["#1f8cf0"],
           border: 0,
           colors: ["#fff"],
           hover: {
@@ -70,22 +70,22 @@ class ApexLine3 extends React.Component {
           },
         },
         yaxis: {
-            labels: {
-                    style: {
-                         colors: "#b3b3b3",
-                    },
-                },
+          labels: {
+            style: {
+              colors: "#b3b3b3",
+            },
+          },
           title: {
             text: "",
           },
         },
-		grid:{
-			yaxis:{
-				lines: {
-					show: false
-				},
-			},
-		},
+        grid: {
+          yaxis: {
+            lines: {
+              show: false
+            },
+          },
+        },
       },
     };
   }

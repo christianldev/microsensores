@@ -2,48 +2,48 @@ import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
+	Chart as ChartJS,
+	CategoryScale,
+	LinearScale,
+	PointElement,
+	LineElement,
+	Title,
+	Tooltip,
+	Legend,
 } from 'chart.js';
 
 ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-); 
+	CategoryScale,
+	LinearScale,
+	PointElement,
+	LineElement,
+	Title,
+	Tooltip,
+	Legend
+);
 class TicketChart extends Component {
-   render() {
-      const data = {
+	render() {
+		const data = {
 			defaultFontFamily: 'Poppins',
 			labels: ["January", "February", "March", "April", "May"],
 			datasets: [{
 				label: "Sales Stats",
 				backgroundColor: ['rgba(19, 180, 151, 0.1)'],
-				borderColor: '#13B497',
-				pointBackgroundColor: '#13B497',
-				pointBorderColor: '#13B497',
-				borderWidth:4,
-				borderRadius:10,
-				tension:0.5, 
+				borderColor: '#1f8cf0',
+				pointBackgroundColor: '#1f8cf0',
+				pointBorderColor: '#1f8cf0',
+				borderWidth: 4,
+				borderRadius: 10,
+				tension: 0.5,
 				fill: true,
-				pointHoverBackgroundColor: '#13B497',
-				pointHoverBorderColor: '#13B497',
-				data: [0, 2, 4 ,3,6]
+				pointHoverBackgroundColor: '#1f8cf0',
+				pointHoverBorderColor: '#1f8cf0',
+				data: [0, 2, 4, 3, 6]
 			}]
-      };
+		};
 		const options = {
 			//bezierCurve: true,
-			plugins:{
+			plugins: {
 				legend: {
 					display: false
 				},
@@ -55,7 +55,7 @@ class TicketChart extends Component {
 					mode: "nearest",
 					//xPadding: 10,
 					//yPadding: 10,
-					padding:10,
+					padding: 10,
 					caretPadding: 10
 				},
 				responsive: !0,
@@ -91,7 +91,7 @@ class TicketChart extends Component {
 						labelString: "Month"
 					}
 				},
-				y:{
+				y: {
 					display: !1,
 					gridLines: !1,
 					scaleLabel: {
@@ -121,12 +121,12 @@ class TicketChart extends Component {
 				}
 			}
 		};
-      return (
-         <>
-            <Line data={data} height={85} options={options} />
-         </>
-      );
-   }
+		return (
+			<>
+				<Line data={data} height={85} options={options} />
+			</>
+		);
+	}
 }
 
 export default TicketChart;

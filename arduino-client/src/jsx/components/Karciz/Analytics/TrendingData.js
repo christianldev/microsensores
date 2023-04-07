@@ -1,17 +1,17 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const mediaBlog = [
-	{ id: '#1', title: 'The Story of Danau Toba', sales: '454',  series: <IncrementBlog />,},	
-	{ id: '#2', title: 'Jakarta Indie Music Festival 2020', sales: '341',  series: <DecrementBlog />,},	
-	{ id: '#3', title: 'Live Choir in Sydney 2020', sales: '225',  series: <IncrementBlog />,},	
-	{ id: '#4', title: 'Artist Performing Festival In Aus..', sales: '127',  series: <DecrementBlog />,},	
-	{ id: '#5', title: '[LIVE] Football Charity Event 2020', sales: '67',  series: <IncrementBlog />,},	
+	{ id: '#1', title: 'The Story of Danau Toba', sales: '454', series: <IncrementBlog />, },
+	{ id: '#2', title: 'Jakarta Indie Music Festival 2020', sales: '341', series: <DecrementBlog />, },
+	{ id: '#3', title: 'Live Choir in Sydney 2020', sales: '225', series: <IncrementBlog />, },
+	{ id: '#4', title: 'Artist Performing Festival In Aus..', sales: '127', series: <DecrementBlog />, },
+	{ id: '#5', title: '[LIVE] Football Charity Event 2020', sales: '67', series: <IncrementBlog />, },
 ];
 
-const TrendingData = () =>{
-    return (
-        <>
-			{mediaBlog.map((item,index)=>(
+const TrendingData = () => {
+	return (
+		<>
+			{mediaBlog.map((item, index) => (
 				<div className="media align-items-center border-bottom p-md-4 p-3" key={index}>
 					<span className="number  col-1 px-0 align-self-center d-none d-sm-inline-block">{item.id}</span>
 					<div className="ticket-icon bg-primary ms-0 me-3 d-none d-sm-inline-block">
@@ -30,7 +30,7 @@ const TrendingData = () =>{
 						</div>
 					</div>
 					<div className="me-3">
-						<span className="peity-success" dataStyle="width:100%;" style={{display: "none"}}>0,2,1,4</span>
+						<span className="peity-success" dataStyle="width:100%;" style={{ display: "none" }}>0,2,1,4</span>
 						<svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<rect width="3.71426" height="27" rx="1.85713" transform="matrix(-1 0 0 1 26 0)" fill="var(--primary)"></rect>
 							<rect width="3.71426" height="19.6364" rx="1.85713" transform="matrix(-1 0 0 1 18.5723 7.36365)" fill="var(--primary)"></rect>
@@ -41,24 +41,24 @@ const TrendingData = () =>{
 					{item.series}
 				</div>
 			))}
-        </>
-    );
-   
+		</>
+	);
+
 }
-function IncrementBlog (){
-	return(
+function IncrementBlog() {
+	return (
 		<>
 			<svg className="min-w22" width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M0 11L11 -4.72849e-07L22 11" fill="#13B497"></path>
+				<path d="M0 11L11 -4.72849e-07L22 11" fill="#1f8cf0"></path>
 			</svg>
 		</>
 	)
 }
-function DecrementBlog (){
-	return(
+function DecrementBlog() {
+	return (
 		<>
 			<svg className="min-w22" width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M0 -9.61651e-07L11 11L22 0" fill="#E63D3D"/>
+				<path d="M0 -9.61651e-07L11 11L22 0" fill="#E63D3D" />
 			</svg>
 		</>
 	)

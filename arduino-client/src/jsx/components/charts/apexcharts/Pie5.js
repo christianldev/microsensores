@@ -50,7 +50,7 @@ class ApexRedialBar2 extends React.Component {
                      plotOptions: {
                         radialBar: {
                            hollow: {
-                               size: "20%",
+                              size: "20%",
 
                            },
                         },
@@ -126,7 +126,7 @@ class ApexRedialBar2 extends React.Component {
                opacity: 1,
             },
 
-            colors: ["#13b497", "#13b497", "#13b497"],
+            colors: ["#1f8cf0", "#1f8cf0", "#1f8cf0"],
             labels: ["Ticket A", "Ticket B", "Ticket C"],
             legend: {
                fontSize: "14px",

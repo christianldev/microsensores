@@ -2,67 +2,67 @@ import React, { Component } from "react";
 import { Bar } from "react-chartjs-2";
 
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
+	Chart as ChartJS,
+	CategoryScale,
+	LinearScale,
+	BarElement,
+	Title,
+	Tooltip,
+	Legend,
 } from 'chart.js';
 
 ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
+	CategoryScale,
+	LinearScale,
+	BarElement,
+	Title,
+	Tooltip,
+	Legend
 );
 
 class IncreaseChart extends Component {
-   render() {
-      const data = {
+	render() {
+		const data = {
 			defaultFontFamily: "Poppins",
-			labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec","Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
+			labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
 			datasets: [{
 				label: "My First dataset",
-				data: [15, 40, 55, 40, 25, 35, 40, 50, 85, 95, 54, 35,15, 40, 55, 40, 25, 35, 40, 50],
-				borderColor: '#13B497',
+				data: [15, 40, 55, 40, 25, 35, 40, 50, 85, 95, 54, 35, 15, 40, 55, 40, 25, 35, 40, 50],
+				borderColor: '#1f8cf0',
 				borderWidth: "0",
-				backgroundColor: ['#13B497','#036C59','#13B497','#036C59','#13B497','#036C59','#13B497','#036C59','#13B497','#036C59','#13B497','#036C59','#13B497','#036C59','#13B497','#036C59','#13B497','#036C59','#13B497','#036C59',], 
-				hoverBackgroundColor: '#13B497',
+				backgroundColor: ['#1f8cf0', '#036C59', '#1f8cf0', '#036C59', '#1f8cf0', '#036C59', '#1f8cf0', '#036C59', '#1f8cf0', '#036C59', '#1f8cf0', '#036C59', '#1f8cf0', '#036C59', '#1f8cf0', '#036C59', '#1f8cf0', '#036C59', '#1f8cf0', '#036C59',],
+				hoverBackgroundColor: '#1f8cf0',
 				//barThickness: 5
 			}]
-      };
+		};
 		const options = {
-			plugins:{
+			plugins: {
 				legend: false,
-				responsive: true, 
+				responsive: true,
 			},
-			maintainAspectRatio: false, 
+			maintainAspectRatio: false,
 			scales: {
 				y: {
 					display: false,
-					min: 0,					
-					max: 100, 
-					beginAtZero: true, 
-					
+					min: 0,
+					max: 100,
+					beginAtZero: true,
+
 					ticks: {
-						display: false, 
-					}, 
+						display: false,
+					},
 					gridLines: {
-						display: false, 
+						display: false,
 						drawBorder: false
 					}
 				},
 				x: {
-					display: false, 
-					barPercentage: 0.1, 
+					display: false,
+					barPercentage: 0.1,
 					gridLines: {
-						display: false, 
+						display: false,
 						drawBorder: false
-					}, 
+					},
 					ticks: {
 						display: false
 					}
@@ -70,12 +70,12 @@ class IncreaseChart extends Component {
 			}
 		};
 
-      return (
-         <>
-            <Bar data={data} height={40} options={options} />
-         </>
-      );
-   }
+		return (
+			<>
+				<Bar data={data} height={40} options={options} />
+			</>
+		);
+	}
 }
 
 export default IncreaseChart;

@@ -12,30 +12,30 @@ class BarChart1 extends Component {
           data: [65, 59, 80, 81, 56, 55, 40],
           borderColor: "rgba(64, 24, 157, 1)",
           borderWidth: "0",
-          backgroundColor: "#13b497",
-		  barThickness: 40
+          backgroundColor: "#1f8cf0",
+          barThickness: 40
         },
       ],
     };
 
     const options = {
-     plugins:{
-		  legend: false,
-	 },
+      plugins: {
+        legend: false,
+      },
       scales: {
         y:
-          {
-            ticks: {
-              beginAtZero: true,
-            },
+        {
+          ticks: {
+            beginAtZero: true,
           },
-        
-        x: 
-          {
-            // Change here
-            barPercentage: 0.5,
-          },
-        
+        },
+
+        x:
+        {
+          // Change here
+          barPercentage: 0.5,
+        },
+
       },
     };
 

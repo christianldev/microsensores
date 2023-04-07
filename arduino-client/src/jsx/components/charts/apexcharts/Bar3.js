@@ -51,7 +51,7 @@ class ApexBar3 extends React.Component {
                   strokeWidth: 0,
                   radius: 19,
                   strokeColor: "#fff",
-                  fillColors: ["#13b497", "#ff7a00"],
+                  fillColors: ["#1f8cf0", "#ff7a00"],
                   offsetX: 0,
                   offsetY: 0,
                },
@@ -59,7 +59,7 @@ class ApexBar3 extends React.Component {
             yaxis: {
                labels: {
                   style: {
-                    colors: "#b3b3b3",
+                     colors: "#b3b3b3",
                   },
                },
             },
@@ -67,32 +67,32 @@ class ApexBar3 extends React.Component {
                show: true,
                width: 2,
                colors: ["transparent"],
-			   
+
             },
             xaxis: {
                categories: ["06", "07", "08", "09", "10"],
-                labels: {
-                    style: {
-                         colors: "#b3b3b3",
-                    },
-                },
-				axisBorder: {
-				  show: false,
-				},
-				axisTicks: {
-					show: false,
-				},
+               labels: {
+                  style: {
+                     colors: "#b3b3b3",
+                  },
+               },
+               axisBorder: {
+                  show: false,
+               },
+               axisTicks: {
+                  show: false,
+               },
 
             },
-			grid:{
-				yaxis:{
-					lines: {
-						show: false
-					},
-				},
-			},
+            grid: {
+               yaxis: {
+                  lines: {
+                     show: false
+                  },
+               },
+            },
             fill: {
-               colors: ["#13b497", "#ff7a00"],
+               colors: ["#1f8cf0", "#ff7a00"],
                opacity: 1,
             },
             tooltip: {
