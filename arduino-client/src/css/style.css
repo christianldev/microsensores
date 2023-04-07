@@ -16834,7 +16834,7 @@ html[dir='rtl']
 	.metismenu
 	> li.mega-menu:hover
 	> ul::after {
-	background-color: #0e8670;
+	background-color: #1f8cf0;
 }
 [data-sibebarbg='color_4'][data-layout='horizontal']
 	.deznav
@@ -17010,7 +17010,7 @@ html[dir='rtl']
 	--primary: #1f8cf0;
 	--secondary: #1f8cf0;
 	--secondary-light: #f78f13;
-	--primary-hover: #0e8670;
+	--primary-hover: #1f8cf0;
 	--primary-dark: #042a23;
 	--rgba-primary-1: rgba(19, 180, 151, 0.1);
 	--rgba-primary-2: rgba(19, 180, 151, 0.2);
@@ -17536,7 +17536,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 	--primary: #1f8cf0;
 	--secondary: #1f8cf0;
 	--secondary-light: #f78f13;
-	--primary-hover: #0e8670;
+	--primary-hover: #1f8cf0;
 	--primary-dark: #042a23;
 	--rgba-primary-1: rgba(19, 180, 151, 0.1);
 	--rgba-primary-2: rgba(19, 180, 151, 0.2);
@@ -17977,7 +17977,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 	--primary: #1f8cf0;
 	--secondary: #1f8cf0;
 	--secondary-light: #f78f13;
-	--primary-hover: #0e8670;
+	--primary-hover: #1f8cf0;
 	--primary-dark: #042a23;
 	--rgba-primary-1: rgba(19, 180, 151, 0.1);
 	--rgba-primary-2: rgba(19, 180, 151, 0.2);
@@ -21595,7 +21595,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 	.header-left
 	input:focus,
 [data-headerbg='color_3'] .header-left input:focus {
-	border-color: #0e8670;
+	border-color: #1f8cf0;
 }
 
 [data-headerbg='color_3'][data-theme-version='dark']
@@ -21618,8 +21618,8 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 	.header-left
 	.btn,
 [data-headerbg='color_3'] .header-left .btn {
-	background-color: #0e8670;
-	border-color: #0e8670;
+	background-color: #1f8cf0;
+	border-color: #1f8cf0;
 }
 [data-headerbg='color_3'][data-theme-version='dark']
 	.header-left
@@ -30410,7 +30410,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 [data-primary='color_3'] {
 	--primary: #1f8cf0;
 	--secondary: #1f8cf0;
-	--primary-hover: #0e8670;
+	--primary-hover: #1f8cf0;
 	--primary-dark: #042a23;
 	--rgba-primary-1: rgba(19, 180, 151, 0.1);
 	--rgba-primary-2: rgba(19, 180, 151, 0.2);
@@ -30636,7 +30636,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 	--primary: #1f8cf0;
 	--secondary: #1f8cf0;
 	--secondary-light: #f78f13;
-	--primary-hover: #0e8670;
+	--primary-hover: #1f8cf0;
 	--primary-dark: #042a23;
 	--rgba-primary-1: rgba(19, 180, 151, 0.1);
 	--rgba-primary-2: rgba(19, 180, 151, 0.2);
@@ -30882,7 +30882,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 	--primary: #1f8cf0;
 	--secondary: #1f8cf0;
 	--secondary-light: #f78f13;
-	--primary-hover: #0e8670;
+	--primary-hover: #1f8cf0;
 	--primary-dark: #042a23;
 	--rgba-primary-1: rgba(19, 180, 151, 0.1);
 	--rgba-primary-2: rgba(19, 180, 151, 0.2);
@@ -33996,7 +33996,7 @@ textarea.form-control {
 	--primary: #1f8cf0;
 	--secondary: #1f8cf0;
 	--secondary-light: #f78f13;
-	--primary-hover: #0e8670;
+	--primary-hover: #1f8cf0;
 	--primary-dark: #042a23;
 	--rgba-primary-1: rgba(19, 180, 151, 0.1);
 	--rgba-primary-2: rgba(19, 180, 151, 0.2);
@@ -34694,7 +34694,7 @@ textarea.form-control {
 	--primary: #1f8cf0;
 	--secondary: #1f8cf0;
 	--secondary-light: #f78f13;
-	--primary-hover: #0e8670;
+	--primary-hover: #1f8cf0;
 	--primary-dark: #042a23;
 	--rgba-primary-1: rgba(19, 180, 151, 0.1);
 	--rgba-primary-2: rgba(19, 180, 151, 0.2);
@@ -35001,7 +35001,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 	--primary: #1f8cf0;
 	--secondary: #1f8cf0;
 	--secondary-light: #f78f13;
-	--primary-hover: #0e8670;
+	--primary-hover: #1f8cf0;
 	--primary-dark: #042a23;
 	--rgba-primary-1: rgba(19, 180, 151, 0.1);
 	--rgba-primary-2: rgba(19, 180, 151, 0.2);
@@ -35056,7 +35056,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 	--primary: #1f8cf0;
 	--secondary: #1f8cf0;
 	--secondary-light: #f78f13;
-	--primary-hover: #0e8670;
+	--primary-hover: #1f8cf0;
 	--primary-dark: #042a23;
 	--rgba-primary-1: rgba(19, 180, 151, 0.1);
 	--rgba-primary-2: rgba(19, 180, 151, 0.2);
@@ -35127,7 +35127,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 	--primary: #1f8cf0;
 	--secondary: #1f8cf0;
 	--secondary-light: #f78f13;
-	--primary-hover: #0e8670;
+	--primary-hover: #1f8cf0;
 	--primary-dark: #042a23;
 	--rgba-primary-1: rgba(19, 180, 151, 0.1);
 	--rgba-primary-2: rgba(19, 180, 151, 0.2);
@@ -48447,7 +48447,7 @@ html[dir='rtl']
 	--primary: #1f8cf0;
 	--secondary: #1f8cf0;
 	--secondary-light: #f78f13;
-	--primary-hover: #0e8670;
+	--primary-hover: #1f8cf0;
 	--primary-dark: #042a23;
 	--rgba-primary-1: rgba(19, 180, 151, 0.1);
 	--rgba-primary-2: rgba(19, 180, 151, 0.2);

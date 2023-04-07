@@ -3322,13 +3322,13 @@ fieldset:disabled a.btn {
 .btn-primary:hover {
 	color: #fff;
 	background-color: #0f917a;
-	border-color: #0e8670;
+	border-color: #1f8cf0;
 }
 .btn-primary:focus,
 .btn-primary.focus {
 	color: #fff;
 	background-color: #0f917a;
-	border-color: #0e8670;
+	border-color: #1f8cf0;
 	box-shadow: 0 0 0 0.2rem rgba(54, 191, 167, 0.5);
 }
 .btn-primary.disabled,
@@ -3341,7 +3341,7 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
 	color: #fff;
-	background-color: #0e8670;
+	background-color: #1f8cf0;
 	border-color: #0d7a67;
 }
 .btn-primary:not(:disabled):not(.disabled):active:focus,
@@ -5834,7 +5834,7 @@ a.badge:focus {
 a.badge-primary:hover,
 a.badge-primary:focus {
 	color: #fff;
-	background-color: #0e8670;
+	background-color: #1f8cf0;
 }
 a.badge-primary:focus,
 a.badge-primary.focus {
@@ -7312,7 +7312,7 @@ a.bg-primary:hover,
 a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-	background-color: #0e8670 !important;
+	background-color: #1f8cf0 !important;
 }
 
 .bg-secondary {
@@ -17232,7 +17232,7 @@ html[dir='rtl']
 	.metismenu
 	> li.mega-menu:hover
 	> ul::after {
-	background-color: #0e8670;
+	background-color: #1f8cf0;
 }
 [data-sibebarbg='color_4'][data-layout='horizontal']
 	.deznav
@@ -20895,7 +20895,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 	.header-left
 	input:focus,
 [data-headerbg='color_3'] .header-left input:focus {
-	border-color: #0e8670;
+	border-color: #1f8cf0;
 }
 [data-headerbg='color_3'][data-theme-version='dark']
 	.header-left
@@ -20914,8 +20914,8 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 	.header-left
 	.btn,
 [data-headerbg='color_3'] .header-left .btn {
-	background-color: #0e8670;
-	border-color: #0e8670;
+	background-color: #1f8cf0;
+	border-color: #1f8cf0;
 }
 [data-headerbg='color_3'][data-theme-version='dark']
 	.header-left

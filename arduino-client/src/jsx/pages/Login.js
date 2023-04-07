@@ -82,7 +82,7 @@ function Login(props) {
                           {errors.email && <div className="text-danger fs-12">{errors.email}</div>}
                         </div>
                         <div className="form-group">
-                          <label className="mb-2 "><strong>Password</strong></label>
+                          <label className="mb-2 "><strong>Contraseña</strong></label>
                           <input
                             type="password"
                             className="form-control"
@@ -105,7 +105,7 @@ function Login(props) {
                                 className="form-check-label"
                                 htmlFor="basic_checkbox_1"
                               >
-                                Remember my preference
+                                Recordar
                               </label>
                             </div>
                           </div>
@@ -121,9 +121,9 @@ function Login(props) {
                       </form>
                       <div className="new-account mt-2">
                         <p className="">
-                          Don't have an account?{" "}
+                          No tienes cuenta?{" "}
                           <Link className="text-primary" to="/page-register">
-                            Sign up
+                            Registrar
                           </Link>
                         </p>
                       </div>
