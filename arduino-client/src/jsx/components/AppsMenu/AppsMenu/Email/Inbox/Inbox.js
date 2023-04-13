@@ -232,7 +232,7 @@ const Inbox = () => {
                                  />
                                  <label
                                     className="custom-control-label"
-                                    htmlFor="checkbox1"
+                                    htmlhtmlFor="checkbox1"
                                  ></label>
                               </div>
                            </div>

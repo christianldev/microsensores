@@ -104,7 +104,7 @@ const CanceledReviewTable = () => {
                       />
                       <label
                         className="custom-control-label"
-                        for="checkAll"
+                        htmlFor="checkAll"
                       ></label>
                     </div>
                   </div>
@@ -127,7 +127,7 @@ const CanceledReviewTable = () => {
                   rowspan="1"
                   colspan="1"
                   aria-label="Event NAME: activate to sort column ascending"
-                 
+
                 >
                   Event NAME
                 </th>
@@ -138,7 +138,7 @@ const CanceledReviewTable = () => {
                   rowspan="1"
                   colspan="1"
                   aria-label="Stars Review: activate to sort column ascending"
-                  
+
                 >
                   Stars Review
                 </th>
@@ -149,7 +149,7 @@ const CanceledReviewTable = () => {
                   rowspan="1"
                   colspan="1"
                   aria-label="Action: activate to sort column ascending"
-                  
+
                 >
                   Action
                 </th>
@@ -170,7 +170,7 @@ const CanceledReviewTable = () => {
                       />
                       <label
                         className="custom-control-label"
-                        for="customCheckBox2"
+                        htmlFor="customCheckBox2"
                       ></label>
                     </div>
                   </div>
@@ -237,7 +237,7 @@ const CanceledReviewTable = () => {
                       />
                       <label
                         className="custom-control-label"
-                        for="customCheckBox21"
+                        htmlFor="customCheckBox21"
                       ></label>
                     </div>
                   </div>
@@ -304,7 +304,7 @@ const CanceledReviewTable = () => {
                       />
                       <label
                         className="custom-control-label"
-                        for="customCheckBox22"
+                        htmlFor="customCheckBox22"
                       ></label>
                     </div>
                   </div>
@@ -371,7 +371,7 @@ const CanceledReviewTable = () => {
                       />
                       <label
                         className="custom-control-label"
-                        for="customCheckBox23"
+                        htmlFor="customCheckBox23"
                       ></label>
                     </div>
                   </div>
@@ -438,7 +438,7 @@ const CanceledReviewTable = () => {
                       />
                       <label
                         className="custom-control-label"
-                        for="customCheckBox211"
+                        htmlFor="customCheckBox211"
                       ></label>
                     </div>
                   </div>
@@ -505,7 +505,7 @@ const CanceledReviewTable = () => {
                       />
                       <label
                         className="custom-control-label"
-                        for="customCheckBox24"
+                        htmlFor="customCheckBox24"
                       ></label>
                     </div>
                   </div>
@@ -572,7 +572,7 @@ const CanceledReviewTable = () => {
                       />
                       <label
                         className="custom-control-label"
-                        for="customCheckBox25"
+                        htmlFor="customCheckBox25"
                       ></label>
                     </div>
                   </div>
@@ -655,9 +655,8 @@ const CanceledReviewTable = () => {
                   <Link
                     key={i}
                     to="/reviews"
-                    className={`paginate_button  ${
-                      activePag.current === i ? "current" : ""
-                    } `}
+                    className={`paginate_button  ${activePag.current === i ? "current" : ""
+                      } `}
                     onClick={() => onClick(i)}
                   >
                     {number}

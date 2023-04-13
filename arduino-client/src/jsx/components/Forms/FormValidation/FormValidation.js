@@ -44,7 +44,7 @@ const FormValidation = () => {
                       <div className="form-group mb-3 row">
                         <label
                           className="col-lg-4 col-form-label"
-                          htmlFor="val-username"
+                          htmlhtmlFor="val-username"
                         >
                           Username
                           <span className="text-danger">*</span>
@@ -62,7 +62,7 @@ const FormValidation = () => {
                       <div className="form-group mb-3 row">
                         <label
                           className="col-lg-4 col-form-label"
-                          htmlFor="val-email"
+                          htmlhtmlFor="val-email"
                         >
                           Email <span className="text-danger">*</span>
                         </label>
@@ -79,7 +79,7 @@ const FormValidation = () => {
                       <div className="form-group mb-3 row">
                         <label
                           className="col-lg-4 col-form-label"
-                          htmlFor="val-password"
+                          htmlhtmlFor="val-password"
                         >
                           Password
                           <span className="text-danger">*</span>
@@ -97,7 +97,7 @@ const FormValidation = () => {
                       <div className="form-group mb-3 row">
                         <label
                           className="col-lg-4 col-form-label"
-                          htmlFor="val-confirm-password"
+                          htmlhtmlFor="val-confirm-password"
                         >
                           Confirm Password{" "}
                           <span className="text-danger">*</span>
@@ -115,7 +115,7 @@ const FormValidation = () => {
                       <div className="form-group mb-3 row">
                         <label
                           className="col-lg-4 col-form-label"
-                          htmlFor="val-suggestions"
+                          htmlhtmlFor="val-suggestions"
                         >
                           Suggestions <span className="text-danger">*</span>
                         </label>
@@ -134,7 +134,7 @@ const FormValidation = () => {
                       <div className="form-group mb-3 row">
                         <label
                           className="col-lg-4 col-form-label"
-                          htmlFor="val-skill"
+                          htmlhtmlFor="val-skill"
                         >
                           Best Skill
                           <span className="text-danger">*</span>
@@ -163,7 +163,7 @@ const FormValidation = () => {
                       <div className="form-group mb-3 row">
                         <label
                           className="col-lg-4 col-form-label"
-                          htmlFor="val-currency"
+                          htmlhtmlFor="val-currency"
                         >
                           Currency
                           <span className="text-danger">*</span>
@@ -181,7 +181,7 @@ const FormValidation = () => {
                       <div className="form-group mb-3 row">
                         <label
                           className="col-lg-4 col-form-label"
-                          htmlFor="val-website"
+                          htmlhtmlFor="val-website"
                         >
                           Website
                           <span className="text-danger">*</span>
@@ -199,7 +199,7 @@ const FormValidation = () => {
                       <div className="form-group mb-3 row">
                         <label
                           className="col-lg-4 col-form-label"
-                          htmlFor="val-phoneus"
+                          htmlhtmlFor="val-phoneus"
                         >
                           Phone (US)
                           <span className="text-danger">*</span>
@@ -217,7 +217,7 @@ const FormValidation = () => {
                       <div className="form-group mb-3 row">
                         <label
                           className="col-lg-4 col-form-label"
-                          htmlFor="val-digits"
+                          htmlhtmlFor="val-digits"
                         >
                           Digits <span className="text-danger">*</span>
                         </label>
@@ -234,7 +234,7 @@ const FormValidation = () => {
                       <div className="form-group mb-3 row">
                         <label
                           className="col-lg-4 col-form-label"
-                          htmlFor="val-number"
+                          htmlhtmlFor="val-number"
                         >
                           Number <span className="text-danger">*</span>
                         </label>
@@ -251,7 +251,7 @@ const FormValidation = () => {
                       <div className="form-group mb-3 row">
                         <label
                           className="col-lg-4 col-form-label"
-                          htmlFor="val-range"
+                          htmlhtmlFor="val-range"
                         >
                           Range [1, 5]
                           <span className="text-danger">*</span>
@@ -276,7 +276,7 @@ const FormValidation = () => {
                         <div className="col-lg-8">
                           <label
                             className="form-check css-control-primary css-checkbox"
-                            htmlFor="val-terms"
+                            htmlhtmlFor="val-terms"
                           >
                             <input
                               type="checkbox"
@@ -330,19 +330,18 @@ const FormValidation = () => {
                   }) => (
                     <form onSubmit={handleSubmit}>
                       <div
-                        className={`form-group mb-3 ${
-                          values.username
+                        className={`form-group mb-3 ${values.username
                             ? errors.username
                               ? "is-invalid"
                               : "is-valid"
                             : ""
-                        }`}
+                          }`}
                       >
                         <label className="text-label">Username</label>
                         <div className="input-group">
-                            <span className="input-group-text ">
-                              <i className="fa fa-user" />{" "}
-                            </span>
+                          <span className="input-group-text ">
+                            <i className="fa fa-user" />{" "}
+                          </span>
                           <input
                             type="text"
                             className="form-control"
@@ -369,22 +368,21 @@ const FormValidation = () => {
                         </div>
                       </div>
                       <div
-                        className={`form-group mb-3 ${
-                          values.password
+                        className={`form-group mb-3 ${values.password
                             ? errors.password
                               ? "is-invalid"
                               : "is-valid"
                             : ""
-                        }`}
+                          }`}
                       >
                         <label className="text-label">Password *</label>
                         <div className="input-group transparent-append mb-2">
-                          
-                            <span className="input-group-text">
-                              {" "}
-                              <i className="fa fa-lock" />{" "}
-                            </span>
-                          
+
+                          <span className="input-group-text">
+                            {" "}
+                            <i className="fa fa-lock" />{" "}
+                          </span>
+
                           <input
                             type={`${showPassword ? "text" : "password"}`}
                             className="form-control"
@@ -401,9 +399,9 @@ const FormValidation = () => {
                             onClick={() => setShowPassword(!showPassword)}
                           >
 
-                              {" "}
-                                {showPassword === false ? (<i className="fa fa-eye-slash" />) : (<i className="fa fa-eye" />)}
-                            
+                            {" "}
+                            {showPassword === false ? (<i className="fa fa-eye-slash" />) : (<i className="fa fa-eye" />)}
+
                           </div>
                           <div
                             id="val-username1-error"
@@ -423,7 +421,7 @@ const FormValidation = () => {
                             type="checkbox"
                           />
                           <label
-                            htmlFor="checkbox1"
+                            htmlhtmlFor="checkbox1"
                             className="form-check-label"
                           >
                             Check me out
@@ -438,7 +436,7 @@ const FormValidation = () => {
                       >
                         Submit
                       </button>
-                      <button  className="btn btn-danger light">
+                      <button className="btn btn-danger light">
                         Cancel
                       </button>
                     </form>

@@ -4,17 +4,17 @@ import validate from './validate';
 const colors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
 
 const renderColorSelector = ({ input, meta: { touched, error } }) => (
-  <div>
-    <select className="form-control" {...input}>
-      <option value="">Select a color...</option>
-      {colors.map(val => <option value={val} key={val}>{val}</option>)}
-    </select>
-    {touched && error && <span>{error}</span>}
-  </div>
+	<div>
+		<select className="form-control" {...input}>
+			<option value="">Select a color...</option>
+			{colors.map(val => <option value={val} key={val}>{val}</option>)}
+		</select>
+		{touched && error && <span>{error}</span>}
+	</div>
 );
 
 const WizardFormThirdPage = props => {
-  const { handleSubmit, pristine, previousPage, submitting } = props;
+	const { handleSubmit, pristine, previousPage, submitting } = props;
 	return (
 		<form onSubmit={handleSubmit}>
 			<div className="form-group">
@@ -22,18 +22,18 @@ const WizardFormThirdPage = props => {
 				<Field name="favoriteColor" component={renderColorSelector} />
 			</div>
 			<div className="mt-2 mb-2">
-				  <Field
+				<Field
 					name="employed"
 					id="employed"
 					component="input"
 					type="checkbox"
-				  />
-					<label className="ms-2 " htmlFor="employed">You are employed</label>
+				/>
+				<label className="ms-2 " htmlhtmlFor="employed">You are employed</label>
 			</div>
 			<div className="form-group">
 				<label className="font-w600">Address</label>
 				<div>
-					<Field name="notes" className="form-control" component="textarea" placeholder="write here ......" rows={4}/>
+					<Field name="notes" className="form-control" component="textarea" placeholder="write here ......" rows={4} />
 				</div>
 			</div>
 			<div>
@@ -46,8 +46,8 @@ const WizardFormThirdPage = props => {
 	);
 };
 export default reduxForm({
-  form: 'wizard', //                 <------ same form name
-  destroyOnUnmount: false, //        <------ preserve form data
-  forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
-  validate,
+	form: 'wizard', //                 <------ same form name
+	destroyOnUnmount: false, //        <------ preserve form data
+	forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
+	validate,
 })(WizardFormThirdPage);

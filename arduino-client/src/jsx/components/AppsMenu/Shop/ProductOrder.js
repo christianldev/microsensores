@@ -6,9 +6,9 @@ import { Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const ProductOrder = () => {
-  
+
   const chackboxFun = (type) => {
-    setTimeout(()=>{
+    setTimeout(() => {
       const motherChackBox = document.querySelector(".product_order_single");
       const chackbox = document.querySelectorAll(".product_order");
       for (let i = 0; i < chackbox.length; i++) {
@@ -28,7 +28,7 @@ const ProductOrder = () => {
           }
         }
       }
-    },100)
+    }, 100)
   };
 
   return (
@@ -52,7 +52,7 @@ const ProductOrder = () => {
                           />
                           <label
                             className="form-check-label"
-                            htmlFor="checkAll"
+                            htmlhtmlFor="checkAll"
                           />
                         </div>
                       </th>
@@ -76,7 +76,7 @@ const ProductOrder = () => {
                           />
                           <label
                             className="form-check-label"
-                            htmlFor="checkbox"
+                            htmlhtmlFor="checkbox"
                           />
                         </div>
                       </td>
@@ -198,7 +198,7 @@ const ProductOrder = () => {
                           />
                           <label
                             className="form-check-label"
-                            htmlFor="checkbox1"
+                            htmlhtmlFor="checkbox1"
                           />
                         </div>
                       </td>
@@ -320,7 +320,7 @@ const ProductOrder = () => {
                           />
                           <label
                             className="form-check-label"
-                            htmlFor="checkbox2"
+                            htmlhtmlFor="checkbox2"
                           />
                         </div>
                       </td>
@@ -442,7 +442,7 @@ const ProductOrder = () => {
                           />
                           <label
                             className="form-check-label"
-                            htmlFor="checkbox3"
+                            htmlhtmlFor="checkbox3"
                           />
                         </div>
                       </td>
@@ -564,7 +564,7 @@ const ProductOrder = () => {
                           />
                           <label
                             className="form-check-label"
-                            htmlFor="checkbox4"
+                            htmlhtmlFor="checkbox4"
                           />
                         </div>
                       </td>
@@ -686,7 +686,7 @@ const ProductOrder = () => {
                           />
                           <label
                             className="form-check-label"
-                            htmlFor="checkbox5"
+                            htmlhtmlFor="checkbox5"
                           />
                         </div>
                       </td>
@@ -807,7 +807,7 @@ const ProductOrder = () => {
                           />
                           <label
                             className="form-check-label"
-                            htmlFor="checkbox6"
+                            htmlhtmlFor="checkbox6"
                           />
                         </div>
                       </td>
@@ -931,7 +931,7 @@ const ProductOrder = () => {
                           />
                           <label
                             className="form-check-label"
-                            htmlFor="checkbox7"
+                            htmlhtmlFor="checkbox7"
                           />
                         </div>
                       </td>
@@ -1052,7 +1052,7 @@ const ProductOrder = () => {
                           />
                           <label
                             className="form-check-label"
-                            htmlFor="checkbox8"
+                            htmlhtmlFor="checkbox8"
                           />
                         </div>
                       </td>
@@ -1175,7 +1175,7 @@ const ProductOrder = () => {
                           />
                           <label
                             className="form-check-label"
-                            htmlFor="checkbox9"
+                            htmlhtmlFor="checkbox9"
                           />
                         </div>
                       </td>
@@ -1298,7 +1298,7 @@ const ProductOrder = () => {
                           />
                           <label
                             className="form-check-label"
-                            htmlFor="checkbox10"
+                            htmlhtmlFor="checkbox10"
                           />
                         </div>
                       </td>
@@ -1419,7 +1419,7 @@ const ProductOrder = () => {
                           />
                           <label
                             className="form-check-label"
-                            htmlFor="checkbox11"
+                            htmlhtmlFor="checkbox11"
                           />
                         </div>
                       </td>

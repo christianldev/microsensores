@@ -29,9 +29,9 @@ const BootstrapTable = () => {
     </svg>
   );
   // Normal page
- /*  const [data, setData] = useState(
-    document.querySelectorAll(".custom-checkbox")
-  ); */
+  /*  const [data, setData] = useState(
+     document.querySelectorAll(".custom-checkbox")
+   ); */
   const [test, settest] = useState(false);
   // use effect
   useEffect(() => {
@@ -201,7 +201,7 @@ const BootstrapTable = () => {
                         />
                         <label
                           className="custom-control-label"
-                          htmlFor="checkbox1_exam_all"
+                          htmlhtmlFor="checkbox1_exam_all"
                         ></label>
                       </div>
                     </th>
@@ -235,7 +235,7 @@ const BootstrapTable = () => {
                         />
                         <label
                           className="custom-control-label"
-                          htmlFor="customCheckBox2"
+                          htmlhtmlFor="customCheckBox2"
                         ></label>
                       </div>
                     </td>
@@ -290,7 +290,7 @@ const BootstrapTable = () => {
                         />
                         <label
                           className="custom-control-label"
-                          htmlFor="customCheckBox3"
+                          htmlhtmlFor="customCheckBox3"
                         ></label>
                       </div>
                     </td>
@@ -345,7 +345,7 @@ const BootstrapTable = () => {
                         />
                         <label
                           className="custom-control-label"
-                          htmlFor="customCheckBox4"
+                          htmlhtmlFor="customCheckBox4"
                         ></label>
                       </div>
                     </td>

@@ -15,7 +15,7 @@ const InboxMessage = ({ message: { text, time, icon }, id }) => {
                      />
                      <label
                         className="custom-control-label"
-                        htmlFor={`checkbox0${id}`}
+                        htmlhtmlFor={`checkbox0${id}`}
                      ></label>
                   </div>
                </div>

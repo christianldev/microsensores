@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const InboxMessage = ({ message: { text, time, icon }, id }) => {
@@ -16,15 +16,15 @@ const InboxMessage = ({ message: { text, time, icon }, id }) => {
                      />
                      <label
                         className="form-check-label"
-                        htmlFor={`checkbox0${id}`}
+                        htmlhtmlFor={`checkbox0${id}`}
                      ></label>
                   </div>
                </div>
                <div className="ms-2">
                   <button className="border-0 bg-transparent align-middle p-0">
-                     <i 
-                        className={`${icon} ${!star ? "" : "yellow" }`}
-                        onClick={()=>setStar(!star)}
+                     <i
+                        className={`${icon} ${!star ? "" : "yellow"}`}
+                        onClick={() => setStar(!star)}
                      ></i>
                   </button>
                </div>

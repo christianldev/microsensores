@@ -85,7 +85,7 @@ const RefundedReviewTable = () => {
                   aria-sort="ascending"
                   aria-label="
 							: activate to sort column descending"
-                  
+
                 >
                   <div className="checkbox me-0 align-self-center">
                     <div className="form-check custom-checkbox ">
@@ -98,13 +98,13 @@ const RefundedReviewTable = () => {
                       />
                       <label
                         className="form-check-label"
-                        for="checkAll"
+                        htmlFor="checkAll"
                       ></label>
                     </div>
                   </div>
                 </th>
                 <th
-                 
+
                   className="sorting"
                   tabindex="0"
                   aria-controls="example5"
@@ -121,7 +121,7 @@ const RefundedReviewTable = () => {
                   rowspan="1"
                   colspan="1"
                   aria-label="Event NAME: activate to sort column ascending"
-                  
+
                 >
                   Event NAME
                 </th>
@@ -132,7 +132,7 @@ const RefundedReviewTable = () => {
                   rowspan="1"
                   colspan="1"
                   aria-label="Stars Review: activate to sort column ascending"
-                  
+
                 >
                   Stars Review
                 </th>
@@ -143,7 +143,7 @@ const RefundedReviewTable = () => {
                   rowspan="1"
                   colspan="1"
                   aria-label="Action: activate to sort column ascending"
-                  
+
                 >
                   Action
                 </th>
@@ -164,7 +164,7 @@ const RefundedReviewTable = () => {
                       />
                       <label
                         className="form-check-label"
-                        for="customCheckBox23"
+                        htmlFor="customCheckBox23"
                       ></label>
                     </div>
                   </div>
@@ -178,8 +178,8 @@ const RefundedReviewTable = () => {
                       alt="DexignZone"
                     />
                     <div className="media-body">
-						<h4 className="font-w600 mb-1 wspace-no">Glee Smiley</h4>
-						<span>Sunday, 24 July 2020 04:55 PM</span>
+                      <h4 className="font-w600 mb-1 wspace-no">Glee Smiley</h4>
+                      <span>Sunday, 24 July 2020 04:55 PM</span>
                     </div>
                   </div>
                 </td>
@@ -202,8 +202,8 @@ const RefundedReviewTable = () => {
                 </td>
                 <td>
                   <div className="d-flex">
-						<Link to="" className="btn btn-primary light btn-sm px-4">Publish</Link>
-						<Link to="" className="btn btn-danger light  btn-sm ms-2 px-4">Delete</Link>
+                    <Link to="" className="btn btn-primary light btn-sm px-4">Publish</Link>
+                    <Link to="" className="btn btn-danger light  btn-sm ms-2 px-4">Delete</Link>
                   </div>
                 </td>
               </tr>
@@ -220,7 +220,7 @@ const RefundedReviewTable = () => {
                       />
                       <label
                         className="form-check-label"
-                        for="customCheckBox211"
+                        htmlFor="customCheckBox211"
                       ></label>
                     </div>
                   </div>
@@ -234,8 +234,8 @@ const RefundedReviewTable = () => {
                       alt="DexignZone"
                     />
                     <div className="media-body">
-						<h4 className="font-w600 mb-1 wspace-no">Glee Smiley</h4>
-						<span>Sunday, 24 July 2020 04:55 PM</span>
+                      <h4 className="font-w600 mb-1 wspace-no">Glee Smiley</h4>
+                      <span>Sunday, 24 July 2020 04:55 PM</span>
                     </div>
                   </div>
                 </td>
@@ -258,12 +258,12 @@ const RefundedReviewTable = () => {
                 </td>
                 <td>
                   <div className="d-flex">
-						<Link to="" className="btn btn-primary light btn-sm px-4">Publish</Link>
-						<Link to="" className="btn btn-danger light  btn-sm ms-2 px-4">Delete</Link>
+                    <Link to="" className="btn btn-primary light btn-sm px-4">Publish</Link>
+                    <Link to="" className="btn btn-danger light  btn-sm ms-2 px-4">Delete</Link>
                   </div>
                 </td>
               </tr>
-             
+
             </tbody>
           </table>
 
@@ -293,9 +293,8 @@ const RefundedReviewTable = () => {
                   <Link
                     key={i}
                     to="/reviews"
-                    className={`paginate_button  ${
-                      activePag.current === i ? "current" : ""
-                    } `}
+                    className={`paginate_button  ${activePag.current === i ? "current" : ""
+                      } `}
                     onClick={() => onClick(i)}
                   >
                     {number}

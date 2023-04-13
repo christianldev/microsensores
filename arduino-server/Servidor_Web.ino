@@ -17,7 +17,13 @@ const int led = 13;
 
 void handleRoot() {
   digitalWrite(led, 1);
-  server.send(200, "text/plain", "hello from esp82666!\r\n");
+  // server.send(200, "text/plain", "hello from esp82666!\r\n");
+  server.serveStatic("/", SPIFFS, "/").setDefaultFile("../arduino-client/build/index.html");
+
+	server.onNotFound([](AsyncWebServerRequest *request) {
+		request->send(400, "text/plain", "Not found");
+	});
+
   digitalWrite(led, 0);
 }
 

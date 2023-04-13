@@ -83,7 +83,7 @@ const AllReviewTable = () => {
                   colspan="1"
                   aria-sort="ascending"
                   aria-label=": activate to sort column descending"
-                  
+
                 >
                   <div className="checkbox me-0 align-self-center">
                     <div className="form-check soldre-viewall custom-checkbox ">
@@ -96,13 +96,13 @@ const AllReviewTable = () => {
                       />
                       <label
                         className="form-check-label"
-                        for="checkAll"
+                        htmlFor="checkAll"
                       ></label>
                     </div>
                   </div>
                 </th>
                 <th
-                  
+
                   className="sorting"
                   tabindex="0"
                   aria-controls="example5"
@@ -119,7 +119,7 @@ const AllReviewTable = () => {
                   rowspan="1"
                   colspan="1"
                   aria-label="Event NAME: activate to sort column ascending"
-                  
+
                 >
                   Event NAME
                 </th>
@@ -130,7 +130,7 @@ const AllReviewTable = () => {
                   rowspan="1"
                   colspan="1"
                   aria-label="Stars Review: activate to sort column ascending"
-                  
+
                 >
                   Stars Review
                 </th>
@@ -141,7 +141,7 @@ const AllReviewTable = () => {
                   rowspan="1"
                   colspan="1"
                   aria-label="Action: activate to sort column ascending"
-                  
+
                 >
                   Action
                 </th>
@@ -162,7 +162,7 @@ const AllReviewTable = () => {
                       />
                       <label
                         className="form-check-label"
-                        for="customCheckBox2"
+                        htmlFor="customCheckBox2"
                       ></label>
                     </div>
                   </div>
@@ -176,8 +176,8 @@ const AllReviewTable = () => {
                       alt="DexignZone"
                     />
                     <div className="media-body">
-						<h4 className="font-w600 mb-1 wspace-no">John Doe</h4>
-						<span>Sunday, 24 July 2020 04:55 PM</span>
+                      <h4 className="font-w600 mb-1 wspace-no">John Doe</h4>
+                      <span>Sunday, 24 July 2020 04:55 PM</span>
                     </div>
                   </div>
                 </td>
@@ -200,8 +200,8 @@ const AllReviewTable = () => {
                 </td>
                 <td>
                   <div className="d-flex">
-                   <Link to="" className="btn btn-primary light btn-sm px-4">Publish</Link>
-					<Link to="" className="btn btn-danger light  btn-sm ms-2 px-4">Delete</Link>
+                    <Link to="" className="btn btn-primary light btn-sm px-4">Publish</Link>
+                    <Link to="" className="btn btn-danger light  btn-sm ms-2 px-4">Delete</Link>
                   </div>
                 </td>
               </tr>
@@ -218,7 +218,7 @@ const AllReviewTable = () => {
                       />
                       <label
                         className="form-check-label"
-                        for="customCheckBox21"
+                        htmlFor="customCheckBox21"
                       ></label>
                     </div>
                   </div>
@@ -232,8 +232,8 @@ const AllReviewTable = () => {
                       alt="DexignZone"
                     />
                     <div className="media-body">
-						<h4 className="font-w600 mb-1 wspace-no">Louis Jovanny</h4>
-						<span>Sunday, 24 July 2020 04:55 PM</span>
+                      <h4 className="font-w600 mb-1 wspace-no">Louis Jovanny</h4>
+                      <span>Sunday, 24 July 2020 04:55 PM</span>
                     </div>
                   </div>
                 </td>
@@ -257,7 +257,7 @@ const AllReviewTable = () => {
                 <td>
                   <div className="d-flex">
                     <Link to="" className="btn btn-primary light btn-sm px-4">Publish</Link>
-					<Link to="" className="btn btn-danger light  btn-sm ms-2 px-4">Delete</Link>
+                    <Link to="" className="btn btn-danger light  btn-sm ms-2 px-4">Delete</Link>
                   </div>
                 </td>
               </tr>
@@ -274,7 +274,7 @@ const AllReviewTable = () => {
                       />
                       <label
                         className="form-check-label"
-                        for="customCheckBox22"
+                        htmlFor="customCheckBox22"
                       ></label>
                     </div>
                   </div>
@@ -288,8 +288,8 @@ const AllReviewTable = () => {
                       alt="DexignZone"
                     />
                     <div className="media-body">
-						<h4 className="font-w600 mb-1 wspace-no">Cindy Hawkins</h4>
-						<span>Sunday, 24 July 2020 04:55 PM</span>
+                      <h4 className="font-w600 mb-1 wspace-no">Cindy Hawkins</h4>
+                      <span>Sunday, 24 July 2020 04:55 PM</span>
                     </div>
                   </div>
                 </td>
@@ -313,7 +313,7 @@ const AllReviewTable = () => {
                 <td>
                   <div className="d-flex">
                     <Link to="" className="btn btn-primary light btn-sm px-4">Publish</Link>
-					<Link to="" className="btn btn-danger light  btn-sm ms-2 px-4">Delete</Link>
+                    <Link to="" className="btn btn-danger light  btn-sm ms-2 px-4">Delete</Link>
                   </div>
                 </td>
               </tr>
@@ -346,9 +346,8 @@ const AllReviewTable = () => {
                   <Link
                     key={i}
                     to="/reviews"
-                    className={`paginate_button  ${
-                      activePag.current === i ? "current" : ""
-                    } `}
+                    className={`paginate_button  ${activePag.current === i ? "current" : ""
+                      } `}
                     onClick={() => onClick(i)}
                   >
                     {number}

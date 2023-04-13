@@ -40,7 +40,7 @@ const Customers = () => {
          />
          <label
             className="custom-control-label"
-            htmlFor={`checkAll${i}`}
+            htmlhtmlFor={`checkAll${i}`}
          ></label>
       </div>
    );
@@ -65,7 +65,7 @@ const Customers = () => {
                                        />
                                        <label
                                           className="custom-control-label"
-                                          htmlFor="checkAll"
+                                          htmlhtmlFor="checkAll"
                                        ></label>
                                     </div>
                                  </th>

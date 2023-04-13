@@ -1,81 +1,81 @@
-import React,{useState, useEffect, useRef} from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Dropdown } from 'react-bootstrap';
 
 const ticketData = [
-    {title:'System Architect', subtitle:'Edinburgh', number:'61', category:'molestiae', date:'2023/01/13', status:'Inprogress', statusBdge:'badge-info'},
-    {title:'Accountant', subtitle:'Tokyo', number:'65', category:'perferendis', date:'2023/01/14', status:'Re-Open', statusBdge:'badge-secondary'},
-    {title:'Junior Technical Author', subtitle:'San Francisco', number:'68', category:'commodin', date:'2023/01/17', status:'New', statusBdge:'badge-danger'},
-    {title:'Senior Javascript Developer', subtitle:'Edinburgh', number:'72', category:'perferendis', date:'2023/01/20', status:'Inprogress', statusBdge:'badge-info'},
-    {title:'Accountant', subtitle:'Tokyo', number:'76', category:'repudiandae', date:'2023/01/25', status:'On-Hold', statusBdge:'badge-warning'},
-    {title:'Integration Specialist', subtitle:'New York', number:'48', category:'commodin', date:'2023/01/25', status:'Re-Open', statusBdge:'badge-secondary'},
-    {title:'Sales Assistant', subtitle:'San Francisco', number:'59', category:'repudiandae', date:'2023/01/30', status:'New', statusBdge:'badge-danger'},
-    {title:'Integration Specialist', subtitle:'Tokyo', number:'86', category:'molestiae', date:'2023/02/02', status:'Inprogress', statusBdge:'badge-info'},
-    {title:'Javascript Developer', subtitle:'San Francisco', number:'90', category:'repudiandae', date:'2023/02/05', status:'New', statusBdge:'badge-danger'},
-    {title:'Software Engineer', subtitle:'Edinburgh', number:'70', category:'molestiae', date:'2023/02/07', status:'Inprogress', statusBdge:'badge-info'},
+    { title: 'System Architect', subtitle: 'Edinburgh', number: '61', category: 'molestiae', date: '2023/01/13', status: 'Inprogress', statusBdge: 'badge-info' },
+    { title: 'Accountant', subtitle: 'Tokyo', number: '65', category: 'perferendis', date: '2023/01/14', status: 'Re-Open', statusBdge: 'badge-secondary' },
+    { title: 'Junior Technical Author', subtitle: 'San Francisco', number: '68', category: 'commodin', date: '2023/01/17', status: 'New', statusBdge: 'badge-danger' },
+    { title: 'Senior Javascript Developer', subtitle: 'Edinburgh', number: '72', category: 'perferendis', date: '2023/01/20', status: 'Inprogress', statusBdge: 'badge-info' },
+    { title: 'Accountant', subtitle: 'Tokyo', number: '76', category: 'repudiandae', date: '2023/01/25', status: 'On-Hold', statusBdge: 'badge-warning' },
+    { title: 'Integration Specialist', subtitle: 'New York', number: '48', category: 'commodin', date: '2023/01/25', status: 'Re-Open', statusBdge: 'badge-secondary' },
+    { title: 'Sales Assistant', subtitle: 'San Francisco', number: '59', category: 'repudiandae', date: '2023/01/30', status: 'New', statusBdge: 'badge-danger' },
+    { title: 'Integration Specialist', subtitle: 'Tokyo', number: '86', category: 'molestiae', date: '2023/02/02', status: 'Inprogress', statusBdge: 'badge-info' },
+    { title: 'Javascript Developer', subtitle: 'San Francisco', number: '90', category: 'repudiandae', date: '2023/02/05', status: 'New', statusBdge: 'badge-danger' },
+    { title: 'Software Engineer', subtitle: 'Edinburgh', number: '70', category: 'molestiae', date: '2023/02/07', status: 'Inprogress', statusBdge: 'badge-info' },
 ];
 
 const AllTicket = () => {
     const [data, setData] = useState(
-		document.querySelectorAll("#ticket_wrapper tbody tr")
-	);
-	const sort = 10;
-	const activePag = useRef(0);
-	//const [test, settest] = useState(0);
+        document.querySelectorAll("#ticket_wrapper tbody tr")
+    );
+    const sort = 10;
+    const activePag = useRef(0);
+    //const [test, settest] = useState(0);
 
-	// Active data
-	const chageData = (frist, sec) => {
-		for (var i = 0; i < data.length; ++i) {
-			if (i >= frist && i < sec) {
-				data[i].classList.remove("d-none");
-			} else {
-				data[i].classList.add("d-none");
-			}
-		}
-	};
-   // use effect
-   useEffect(() => {
-      setData(document.querySelectorAll("#ticket_wrapper tbody tr"));
-      //chackboxFun();
-	}, []);
-
-  
-   // Active pagginarion
-   activePag.current === 0 && chageData(0, sort);
-   // paggination
-   let paggination = Array(Math.ceil(data.length / sort))
-      .fill()
-      .map((_, i) => i + 1);
-
-   // Active paggination & chage data
-	const onClick = (i) => {
-		activePag.current = i;
-		chageData(activePag.current * sort, (activePag.current + 1) * sort);
-		//settest(i);
-	};
-
-   
-	const chackbox = document.querySelectorAll(".sorting_1 input");
-	const motherChackBox = document.querySelector(".sorting_asc input");
-   // console.log(document.querySelectorAll(".sorting_1 input")[0].checked);
-	const chackboxFun = (type) => {
-      for (let i = 0; i < chackbox.length; i++) {
-         const element = chackbox[i];
-         if (type === "all") {
-            if (motherChackBox.checked) {
-               element.checked = true;
+    // Active data
+    const chageData = (frist, sec) => {
+        for (var i = 0; i < data.length; ++i) {
+            if (i >= frist && i < sec) {
+                data[i].classList.remove("d-none");
             } else {
-               element.checked = false;
+                data[i].classList.add("d-none");
             }
-         } else {
-            if (!element.checked) {
-               motherChackBox.checked = false;
-               break;
+        }
+    };
+    // use effect
+    useEffect(() => {
+        setData(document.querySelectorAll("#ticket_wrapper tbody tr"));
+        //chackboxFun();
+    }, []);
+
+
+    // Active pagginarion
+    activePag.current === 0 && chageData(0, sort);
+    // paggination
+    let paggination = Array(Math.ceil(data.length / sort))
+        .fill()
+        .map((_, i) => i + 1);
+
+    // Active paggination & chage data
+    const onClick = (i) => {
+        activePag.current = i;
+        chageData(activePag.current * sort, (activePag.current + 1) * sort);
+        //settest(i);
+    };
+
+
+    const chackbox = document.querySelectorAll(".sorting_1 input");
+    const motherChackBox = document.querySelector(".sorting_asc input");
+    // console.log(document.querySelectorAll(".sorting_1 input")[0].checked);
+    const chackboxFun = (type) => {
+        for (let i = 0; i < chackbox.length; i++) {
+            const element = chackbox[i];
+            if (type === "all") {
+                if (motherChackBox.checked) {
+                    element.checked = true;
+                } else {
+                    element.checked = false;
+                }
             } else {
-               motherChackBox.checked = true;
+                if (!element.checked) {
+                    motherChackBox.checked = false;
+                    break;
+                } else {
+                    motherChackBox.checked = true;
+                }
             }
-         }
-      }
+        }
     };
 
     return (
@@ -120,10 +120,10 @@ const AllTicket = () => {
                                             <tr>
                                                 <th className="sorting_asc">
                                                     <div className="form-check custom-checkbox ms-2">
-                                                        <input type="checkbox" className="form-check-input" id="checkAll" required="" onClick={() => chackboxFun("all")}/>
-                                                        <label className="form-check-label" for="checkAll"></label>
+                                                        <input type="checkbox" className="form-check-input" id="checkAll" required="" onClick={() => chackboxFun("all")} />
+                                                        <label className="form-check-label" htmlFor="checkAll"></label>
                                                     </div>
-                                                </th>	                                            
+                                                </th>
                                                 <th>User</th>
                                                 <th>Title</th>
                                                 <th>Priority</th>
@@ -132,19 +132,19 @@ const AllTicket = () => {
                                                 <th>Status</th>
                                                 <th>Assign To</th>
                                                 <th>Last Reply</th>
-                                                <th>Actions</th>                                            
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {ticketData.map((item, index)=>(
+                                            {ticketData.map((item, index) => (
                                                 <tr key={index}>
                                                     <td className='sorting_1'>
                                                         <div className="form-check custom-checkbox ms-2">
                                                             <input type="checkbox" className="form-check-input" id={`customCheck${index + 1}`} required="" />
-                                                            <label className="form-check-label" for={`customCheck${index + 1}`}></label>
+                                                            <label className="form-check-label" htmlFor={`customCheck${index + 1}`}></label>
                                                         </div>
                                                     </td>
-                                                    
+
                                                     <td>{item.title}</td>
                                                     <td>{item.subtitle}</td>
                                                     <td>{item.number}</td>
@@ -165,9 +165,9 @@ const AllTicket = () => {
                                                     </td>
                                                 </tr>
                                             ))}
-                                                                                        
+
                                         </tbody>
-                                        
+
                                     </table>
                                     <div className="d-sm-flex text-center justify-content-between align-items-center mt-3 mb-3">
                                         <div className="dataTables_info">
@@ -197,9 +197,8 @@ const AllTicket = () => {
                                                     <Link
                                                         key={i}
                                                         to="/all-ticket"
-                                                        className={`paginate_button  ${
-                                                            activePag.current === i ? "current" : ""
-                                                        } `}
+                                                        className={`paginate_button  ${activePag.current === i ? "current" : ""
+                                                            } `}
                                                         onClick={() => onClick(i)}
                                                     >
                                                         {number}
@@ -226,7 +225,7 @@ const AllTicket = () => {
                     </div>
                 </div>
             </div>
-            
+
         </>
     );
 };

@@ -188,7 +188,7 @@ const AppProfile = () => {
                                        <div className="col-lg-6">
                                           <div className="form-group">
                                              <label
-                                                htmlFor="author"
+                                                htmlhtmlFor="author"
                                                 className="text-black font-w600"
                                              >
                                                 Name{" "}
@@ -208,7 +208,7 @@ const AppProfile = () => {
                                        <div className="col-lg-6">
                                           <div className="form-group">
                                              <label
-                                                htmlFor="email"
+                                                htmlhtmlFor="email"
                                                 className="text-black font-w600"
                                              >
                                                 Email{" "}
@@ -228,7 +228,7 @@ const AppProfile = () => {
                                        <div className="col-lg-12">
                                           <div className="form-group">
                                              <label
-                                                htmlFor="comment"
+                                                htmlhtmlFor="comment"
                                                 className="text-black font-w600"
                                              >
                                                 Comment
@@ -463,11 +463,10 @@ const AppProfile = () => {
                                  <Link
                                     to="#my-posts"
                                     data-toggle="tab"
-                                    className={`nav-link ${
-                                       activeToggle === "posts"
+                                    className={`nav-link ${activeToggle === "posts"
                                           ? "active show"
                                           : ""
-                                    }`}
+                                       }`}
                                  >
                                     Posts
                                  </Link>
@@ -479,11 +478,10 @@ const AppProfile = () => {
                                  <Link
                                     to="#about-me"
                                     data-toggle="tab"
-                                    className={`nav-link ${
-                                       activeToggle === "aboutMe"
+                                    className={`nav-link ${activeToggle === "aboutMe"
                                           ? "active show"
                                           : ""
-                                    }`}
+                                       }`}
                                  >
                                     About Me
                                  </Link>
@@ -493,11 +491,10 @@ const AppProfile = () => {
                                     to="#profile-settings"
                                     data-toggle="tab"
                                     onClick={() => setActiveToggle("setting")}
-                                    className={`nav-link ${
-                                       activeToggle === "setting"
+                                    className={`nav-link ${activeToggle === "setting"
                                           ? "active show"
                                           : ""
-                                    }`}
+                                       }`}
                                  >
                                     Setting
                                  </Link>
@@ -506,11 +503,10 @@ const AppProfile = () => {
                            <div className="tab-content">
                               <div
                                  id="my-posts"
-                                 className={`tab-pane fade ${
-                                    activeToggle === "posts"
+                                 className={`tab-pane fade ${activeToggle === "posts"
                                        ? "active show"
                                        : ""
-                                 }`}
+                                    }`}
                               >
                                  <div className="my-post-content pt-3">
                                     <div className="post-input">
@@ -665,11 +661,10 @@ const AppProfile = () => {
                               </div>
                               <div
                                  id="about-me"
-                                 className={`tab-pane fade ${
-                                    activeToggle === "aboutMe"
+                                 className={`tab-pane fade ${activeToggle === "aboutMe"
                                        ? "active show"
                                        : ""
-                                 }`}
+                                    }`}
                               >
                                  <div className="profile-about-me">
                                     <div className="pt-4 border-bottom-1 pb-3">
@@ -854,11 +849,10 @@ const AppProfile = () => {
                               </div>
                               <div
                                  id="profile-settings"
-                                 className={`tab-pane fade ${
-                                    activeToggle === "setting"
+                                 className={`tab-pane fade ${activeToggle === "setting"
                                        ? "active show"
                                        : ""
-                                 }`}
+                                    }`}
                               >
                                  <div className="pt-3">
                                     <div className="settings-form">
@@ -948,7 +942,7 @@ const AppProfile = () => {
                                                 />
                                                 <label
                                                    className="custom-control-label"
-                                                   htmlFor="gridCheck"
+                                                   htmlhtmlFor="gridCheck"
                                                 >
                                                    Check me out
                                                 </label>

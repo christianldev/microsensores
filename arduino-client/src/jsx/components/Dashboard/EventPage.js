@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import loadable from "@loadable/component";
 import pMinDelay from "p-min-delay";
 import { Link } from 'react-router-dom';
 import { Dropdown } from 'react-bootstrap';
 import EventSlider from './../Karciz/EventPage/EventSlider';
 import card4 from './../../../images/card/4.jpg';
+import ConnectioAWSDynamoDB from '../../../config/aws.config';
 
 const RevenueChart = loadable(() =>
 	pMinDelay(import("./../Karciz/EventPage/RevenueChart"), 1000)
@@ -16,6 +17,8 @@ const SellingApexChart = loadable(() =>
 	pMinDelay(import("./../Karciz/EventPage/SellingApexChart"), 1000)
 );
 
+
+
 const eventTableData = [
 	{ id: '#0012451', date: '04/08/2020 12:34 AM', cname: 'Elisabeth Queen', ticket: '4 Pcs', statusblog: 'NO', },
 	{ id: '#0012452', date: '05/08/2020 11:21 AM', cname: 'Lilibet Queen', ticket: '5 Pcs', statusblog: 'NO', },
@@ -25,13 +28,36 @@ const eventTableData = [
 	{ id: '#0012456', date: '09/08/2020 12:34 AM', cname: 'Victoria Queen', ticket: '2 Pcs', statusblog: 'Yes', },
 ];
 
+
+
 const EventPage = () => {
+
+	const [datainfo, setDatainfo] = React.useState([]);
+
+
+
+	useEffect(() => {
+		ConnectioAWSDynamoDB({ setDatainfo });
+	}, []);
+
+
+
+	const { Items } = datainfo;
+
+	// filter latest position of Items array 
+	const latestPosition = Items && Items[Items.length - 1];
+
+	const { temperature } = latestPosition || {};
+
+	const { N } = temperature || {};
+
+
 	return (
 		<Fragment>
 			<div className="page-titles">
 				<ol className="breadcrumb">
-					<li className="breadcrumb-item active"><Link to={"#"}>Event</Link></li>
-					<li className="breadcrumb-item"><Link to={"#"}>International Live Choir Festivals 2020 </Link></li>
+					<li className="breadcrumb-item active"><Link to={"#"}>Temperatura</Link></li>
+					<li className="breadcrumb-item"><Link to={"#"}>Reporte de Temperatura </Link></li>
 				</ol>
 			</div>
 			<div className="row">
@@ -48,9 +74,9 @@ const EventPage = () => {
 												<Dropdown >
 													<Dropdown.Toggle variant="" as="div" className="custom-dropdown mb-0 d-md-block d-none i-false">
 														<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-															<path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-															<path d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-															<path d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+															<path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+															<path d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+															<path d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
 														</svg>
 													</Dropdown.Toggle>
 													<Dropdown.Menu alignRight={true} className="dropdown-menu-right">
@@ -177,13 +203,15 @@ const EventPage = () => {
 							<div className="card overflow-hidden bg-image bg-danger" >
 								<div className="card-header  border-0">
 									<div>
-										<p className="mb-2 text-light">Ticket Refunded</p>
-										<h3 className="mb-0 fs-24 font-w600 text-white">25 Left</h3>
+										<p className="mb-2 text-light">Temperatura</p>
+										<h3 className="mb-0 fs-24 font-w600 text-white">
+
+										</h3>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div className="col-xl-12">
+						{/* <div className="col-xl-12">
 							<h4 className="fs-20 mb-4">Recent Sales</h4>
 						</div>
 						<div className="col-xl-12">
@@ -217,7 +245,7 @@ const EventPage = () => {
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> */}
 					</div>
 				</div>
 
@@ -227,8 +255,10 @@ const EventPage = () => {
 							<div className="card overflow-hidden bg-image-2" >
 								<div className="card-header  border-0">
 									<div>
-										<p className="mb-2">Ticket Refunded</p>
-										<h3 className="mb-0 fs-24 font-w600">25 Left</h3>
+										<p className="mb-2">Temperatura</p>
+										<h3 className="mb-0 fs-24 font-w600">
+											{N} °C
+										</h3>
 									</div>
 								</div>
 							</div>
@@ -260,10 +290,10 @@ const EventPage = () => {
 								</div>
 							</div>
 						</div>
-						<div className="col-xl-12 col-md-6">
+						{/* <div className="col-xl-12 col-md-6">
 							<h4 className="fs-20 mb-4">Event Galleries</h4>
 							<EventSlider />
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</div>

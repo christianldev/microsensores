@@ -99,7 +99,7 @@ const PatientTable = () => {
                         />
                         <label
                           className="custom-control-label"
-                          htmlFor="checkAll"
+                          htmlhtmlFor="checkAll"
                         />
                       </div>
                     </th>
@@ -206,7 +206,7 @@ const PatientTable = () => {
                         />
                         <label
                           className="custom-control-label"
-                          htmlFor="customCheckBox2"
+                          htmlhtmlFor="customCheckBox2"
                         />
                       </div>
                     </td>
@@ -268,7 +268,7 @@ const PatientTable = () => {
                         />
                         <label
                           className="custom-control-label"
-                          htmlFor="customCheckBox3"
+                          htmlhtmlFor="customCheckBox3"
                         />
                       </div>
                     </td>
@@ -330,7 +330,7 @@ const PatientTable = () => {
                         />
                         <label
                           className="custom-control-label"
-                          htmlFor="customCheckBox4"
+                          htmlhtmlFor="customCheckBox4"
                         />
                       </div>
                     </td>
@@ -392,7 +392,7 @@ const PatientTable = () => {
                         />
                         <label
                           className="custom-control-label"
-                          htmlFor="customCheckBox5"
+                          htmlhtmlFor="customCheckBox5"
                         />
                       </div>
                     </td>
@@ -454,7 +454,7 @@ const PatientTable = () => {
                         />
                         <label
                           className="custom-control-label"
-                          htmlFor="customCheckBox6"
+                          htmlhtmlFor="customCheckBox6"
                         />
                       </div>
                     </td>
@@ -516,7 +516,7 @@ const PatientTable = () => {
                         />
                         <label
                           className="custom-control-label"
-                          htmlFor="customCheckBox7"
+                          htmlhtmlFor="customCheckBox7"
                         />
                       </div>
                     </td>
@@ -578,7 +578,7 @@ const PatientTable = () => {
                         />
                         <label
                           className="custom-control-label"
-                          htmlFor="customCheckBox8"
+                          htmlhtmlFor="customCheckBox8"
                         />
                       </div>
                     </td>
@@ -640,7 +640,7 @@ const PatientTable = () => {
                         />
                         <label
                           className="custom-control-label"
-                          htmlFor="customCheckBox9"
+                          htmlhtmlFor="customCheckBox9"
                         />
                       </div>
                     </td>
@@ -702,7 +702,7 @@ const PatientTable = () => {
                         />
                         <label
                           className="custom-control-label"
-                          htmlFor="customCheckBox10"
+                          htmlhtmlFor="customCheckBox10"
                         />
                       </div>
                     </td>
@@ -764,7 +764,7 @@ const PatientTable = () => {
                         />
                         <label
                           className="custom-control-label"
-                          htmlFor="customCheckBox11"
+                          htmlhtmlFor="customCheckBox11"
                         />
                       </div>
                     </td>
@@ -843,9 +843,8 @@ const PatientTable = () => {
                       <Link
                         key={i}
                         to="/table-datatable-basic"
-                        className={`paginate_button  ${
-                          activePag.current === i ? "current" : ""
-                        } `}
+                        className={`paginate_button  ${activePag.current === i ? "current" : ""
+                          } `}
                         onClick={() => onClick(i)}
                       >
                         {number}

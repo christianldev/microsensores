@@ -29,10 +29,10 @@ const Customers = () => {
       </Dropdown>
    );
 
-   
+
 
    const chackboxFun = (type) => {
-      setTimeout(()=>{
+      setTimeout(() => {
          const chackbox = document.querySelectorAll(".customer_shop_single input");
          const motherChackBox = document.querySelector(".customer_shop input");
          for (let i = 0; i < chackbox.length; i++) {
@@ -52,9 +52,9 @@ const Customers = () => {
                }
             }
          }
-      },100)
+      }, 100)
    };
-   
+
 
    const chack = (i) => (
       <div className={`form-check custom-checkbox ms-2`}>
@@ -67,7 +67,7 @@ const Customers = () => {
          />
          <label
             className="form-check-label"
-            htmlFor={`checkAll${i}`}
+            htmlhtmlFor={`checkAll${i}`}
          ></label>
       </div>
    );
@@ -93,7 +93,7 @@ const Customers = () => {
                                        />
                                        <label
                                           className="form-check-label"
-                                          htmlFor="checkAll"
+                                          htmlhtmlFor="checkAll"
                                        ></label>
                                     </div>
                                  </th>

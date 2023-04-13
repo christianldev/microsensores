@@ -103,7 +103,7 @@ function Login(props) {
                               />
                               <label
                                 className="form-check-label"
-                                htmlFor="basic_checkbox_1"
+                                htmlhtmlFor="basic_checkbox_1"
                               >
                                 Recordar
                               </label>

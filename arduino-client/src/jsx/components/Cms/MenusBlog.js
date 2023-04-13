@@ -1,11 +1,11 @@
-import React,{useState} from 'react';
-import {Link} from 'react-router-dom';
-import {Tab, Nav, Collapse} from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Tab, Nav, Collapse } from 'react-bootstrap';
 
-const MenusBlog = () =>{
+const MenusBlog = () => {
     const [open, setOpen] = useState(true);
     const [open2, setOpen2] = useState(true);
-    return(
+    return (
         <>
             <div className="filter cm-content-box box-primary">
                 <div className="content-title">
@@ -37,43 +37,43 @@ const MenusBlog = () =>{
                                         <Tab.Container defaultActiveKey="View">
                                             <Nav as="ul" className=" tab-my nav nav-tabs" id="myTab" >
                                                 <Nav.Item as="li" className="nav-item me-1" role="presentation">
-                                                    <Nav.Link as="button"  eventKey="View"  type="button">View All</Nav.Link>
+                                                    <Nav.Link as="button" eventKey="View" type="button">View All</Nav.Link>
                                                 </Nav.Item>
-                                                <Nav.Item as="li"  className="nav-item ms-1">
-                                                    <Nav.Link as="button" eventKey="Search"   type="button">Search</Nav.Link>
-                                                </Nav.Item>                                        
+                                                <Nav.Item as="li" className="nav-item ms-1">
+                                                    <Nav.Link as="button" eventKey="Search" type="button">Search</Nav.Link>
+                                                </Nav.Item>
                                             </Nav>
                                             <Tab.Content className="tab-content" id="myTabContent">
-                                                <Tab.Pane  eventKey="View">
+                                                <Tab.Pane eventKey="View">
                                                     <div className="menu-tabs">
                                                         <div className="form-check">
                                                             <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                                            <label className="form-check-label" for="flexCheckDefault">
-                                                                Privacy Policy 
+                                                            <label className="form-check-label" htmlFor="flexCheckDefault">
+                                                                Privacy Policy
                                                             </label>
                                                         </div>
                                                         <div className="form-check">
                                                             <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault-1" />
-                                                            <label className="form-check-label" for="flexCheckDefault-1">
-                                                                Contact Us 
+                                                            <label className="form-check-label" htmlFor="flexCheckDefault-1">
+                                                                Contact Us
                                                             </label>
                                                         </div>
                                                         <div className="form-check">
                                                             <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault-2" />
-                                                            <label className="form-check-label" for="flexCheckDefault-2">
-                                                                Important Information 
+                                                            <label className="form-check-label" htmlFor="flexCheckDefault-2">
+                                                                Important Information
                                                             </label>
                                                         </div>
                                                         <div className="form-check">
                                                             <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault-3" />
-                                                            <label className="form-check-label" for="flexCheckDefault-3">
-                                                                About Us 
+                                                            <label className="form-check-label" htmlFor="flexCheckDefault-3">
+                                                                About Us
                                                             </label>
                                                         </div>
                                                         <div className="form-check">
                                                             <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault-4" />
-                                                            <label className="form-check-label" for="flexCheckDefault-4">
-                                                            Dummy Co 
+                                                            <label className="form-check-label" htmlFor="flexCheckDefault-4">
+                                                                Dummy Co
                                                             </label>
                                                         </div>
                                                         <div className="d-flex align-items-center flex-wrap">
@@ -84,24 +84,24 @@ const MenusBlog = () =>{
                                                 </Tab.Pane>
                                                 <Tab.Pane eventKey="Search">
                                                     <div className="menu-tabs">
-                                                        <label for="exampleFormControlInput1" className="form-label">Search</label>
+                                                        <label htmlFor="exampleFormControlInput1" className="form-label">Search</label>
                                                         <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Page Name" />
-                                                    </div>                                                    
+                                                    </div>
                                                 </Tab.Pane>
-                                                <div className="d-flex align-items-center flex-wrap">                                                
+                                                <div className="d-flex align-items-center flex-wrap">
                                                     <button type="submit" className="btn btn-primary dalb-menu-btn">Add to Menu</button>
                                                 </div>
                                             </Tab.Content>
                                         </Tab.Container>
                                     </div>
-                                    
+
                                 </div>
                             </Collapse>
                         </div>
                         <div className="filter cm-content box-primary">
                             <div className="content-title">
                                 <div className="cpa">
-                                    Links 
+                                    Links
                                 </div>
                                 <div className="tools">
                                     <Link to={"#"} className="expand SlideToolHeader"
@@ -134,7 +134,7 @@ const MenusBlog = () =>{
                         </div>
                     </div>
                 </div>
-            </div>   
+            </div>
         </>
     )
 }

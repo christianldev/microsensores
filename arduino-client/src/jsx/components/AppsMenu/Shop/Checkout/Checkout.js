@@ -75,7 +75,7 @@ const Checkout = () => {
                                  >
                                     Redeem
                                  </button>
-                                 
+
                               </div>
                            </form>
                         </div>
@@ -84,7 +84,7 @@ const Checkout = () => {
                            <form className="needs-validation" noValidate="">
                               <div className="row">
                                  <div className="col-md-6 mb-3">
-                                    <label htmlFor="firstName">
+                                    <label htmlhtmlFor="firstName">
                                        First name
                                     </label>
                                     <input
@@ -99,7 +99,7 @@ const Checkout = () => {
                                     </div>
                                  </div>
                                  <div className="col-md-6 mb-3">
-                                    <label htmlFor="lastName">Last name</label>
+                                    <label htmlhtmlFor="lastName">Last name</label>
                                     <input
                                        type="text"
                                        className="form-control"
@@ -114,11 +114,11 @@ const Checkout = () => {
                               </div>
 
                               <div className="mb-3">
-                                 <label htmlFor="username">Username</label>
-                                 <div className="input-group">                                   
+                                 <label htmlhtmlFor="username">Username</label>
+                                 <div className="input-group">
                                     <span className="input-group-text">
                                        @
-                                    </span>                                   
+                                    </span>
                                     <input
                                        type="text"
                                        className="form-control"
@@ -133,7 +133,7 @@ const Checkout = () => {
                               </div>
 
                               <div className="mb-3">
-                                 <label htmlFor="email">
+                                 <label htmlhtmlFor="email">
                                     Email
                                     <span className="text-muted">
                                        (Optional)
@@ -152,7 +152,7 @@ const Checkout = () => {
                               </div>
 
                               <div className="mb-3">
-                                 <label htmlFor="address">Address</label>
+                                 <label htmlhtmlFor="address">Address</label>
                                  <input
                                     type="text"
                                     className="form-control"
@@ -166,7 +166,7 @@ const Checkout = () => {
                               </div>
 
                               <div className="mb-3">
-                                 <label htmlFor="address2">
+                                 <label htmlhtmlFor="address2">
                                     Address 2
                                     <span className="text-muted">
                                        (Optional)
@@ -182,7 +182,7 @@ const Checkout = () => {
 
                               <div className="row">
                                  <div className="col-md-4 mb-3">
-                                    <label htmlFor="state">Country</label>
+                                    <label htmlhtmlFor="state">Country</label>
                                     <Form.Control as="select">
                                        <option style={{ color: "blue" }}>
                                           Choose...
@@ -195,7 +195,7 @@ const Checkout = () => {
                                     </div>
                                  </div>
                                  <div className="col-md-4 mb-3">
-                                    <label htmlFor="state">State</label>
+                                    <label htmlhtmlFor="state">State</label>
                                     <Form.Control as="select">
                                        <option>Choose...</option>
                                        <option>California</option>
@@ -206,7 +206,7 @@ const Checkout = () => {
                                     </div>
                                  </div>
                                  <div className="col-md-3 mb-3">
-                                    <label htmlFor="zip">Zip</label>
+                                    <label htmlhtmlFor="zip">Zip</label>
                                     <input
                                        type="text"
                                        className="form-control"
@@ -228,7 +228,7 @@ const Checkout = () => {
                                  />
                                  <label
                                     className="form-check-label"
-                                    htmlFor="same-address"
+                                    htmlhtmlFor="same-address"
                                  >
                                     Shipping address is the same as my billing
                                     address
@@ -242,7 +242,7 @@ const Checkout = () => {
                                  />
                                  <label
                                     className="form-check-label"
-                                    htmlFor="save-info"
+                                    htmlhtmlFor="save-info"
                                  >
                                     Save this information for next time
                                  </label>
@@ -262,7 +262,7 @@ const Checkout = () => {
                                     />
                                     <label
                                        className="form-check-label"
-                                       htmlFor="credit"
+                                       htmlhtmlFor="credit"
                                     >
                                        Credit card
                                     </label>
@@ -277,7 +277,7 @@ const Checkout = () => {
                                     />
                                     <label
                                        className="form-check-label"
-                                       htmlFor="debit"
+                                       htmlhtmlFor="debit"
                                     >
                                        Debit card
                                     </label>
@@ -292,7 +292,7 @@ const Checkout = () => {
                                     />
                                     <label
                                        className="form-check-label"
-                                       htmlFor="paypal"
+                                       htmlhtmlFor="paypal"
                                     >
                                        Paypal
                                     </label>
@@ -300,7 +300,7 @@ const Checkout = () => {
                               </div>
                               <div className="row">
                                  <div className="col-md-6 mb-3">
-                                    <label htmlFor="cc-name">
+                                    <label htmlhtmlFor="cc-name">
                                        Name on card
                                     </label>
                                     <input
@@ -318,7 +318,7 @@ const Checkout = () => {
                                     </div>
                                  </div>
                                  <div className="col-md-6 mb-3">
-                                    <label htmlFor="cc-number">
+                                    <label htmlhtmlFor="cc-number">
                                        Credit card number
                                     </label>
                                     <input
@@ -335,7 +335,7 @@ const Checkout = () => {
                               </div>
                               <div className="row">
                                  <div className="col-md-3 mb-3">
-                                    <label htmlFor="cc-expiration">
+                                    <label htmlhtmlFor="cc-expiration">
                                        Expiration
                                     </label>
                                     <input
@@ -350,7 +350,7 @@ const Checkout = () => {
                                     </div>
                                  </div>
                                  <div className="col-md-3 mb-3">
-                                    <label htmlFor="cc-expiration">CVV</label>
+                                    <label htmlhtmlFor="cc-expiration">CVV</label>
                                     <input
                                        type="text"
                                        className="form-control"

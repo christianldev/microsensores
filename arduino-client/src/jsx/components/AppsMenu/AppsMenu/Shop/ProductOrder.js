@@ -25,7 +25,7 @@ const ProductOrder = () => {
                                     />
                                     <label
                                        className="custom-control-label"
-                                       htmlFor="checkAll"
+                                       htmlhtmlFor="checkAll"
                                     ></label>
                                  </div>
                               </th>
@@ -44,15 +44,14 @@ const ProductOrder = () => {
                                     <td key={ii}>
                                        {ii === 0 ? (
                                           <div
-                                             className={`custom-control custom-checkbox checkbox-${
-                                                da === "Completed"
+                                             className={`custom-control custom-checkbox checkbox-${da === "Completed"
                                                    ? "success"
                                                    : da === "On Hold"
-                                                   ? "secondary"
-                                                   : da === "Pending"
-                                                   ? "warning"
-                                                   : ""
-                                             }`}
+                                                      ? "secondary"
+                                                      : da === "Pending"
+                                                         ? "warning"
+                                                         : ""
+                                                }`}
                                           >
                                              <input
                                                 type="checkbox"
@@ -62,7 +61,7 @@ const ProductOrder = () => {
                                              />
                                              <label
                                                 className="custom-control-label"
-                                                htmlFor={`checkAll${i}`}
+                                                htmlhtmlFor={`checkAll${i}`}
                                              ></label>
                                           </div>
                                        ) : da === "Completed" ? (
