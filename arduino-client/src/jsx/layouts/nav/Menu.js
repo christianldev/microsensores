@@ -7,15 +7,11 @@ export const MenuList = [
         content: [
 
             {
-                title: 'Temperatura',
-                to: 'event',
+                title: 'Temperatura y Humedad',
+                to: 'temperatura-humedad',
             },
 
-            {
-                title: 'Humedad',
-                to: 'analytics',
 
-            },
             {
                 title: 'Gas',
                 to: 'analytics',

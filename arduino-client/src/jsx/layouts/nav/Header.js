@@ -45,7 +45,7 @@ const Header = ({ onNote, toggle, onProfile, onNotification, onClick }) => {
 						<div className="header-left">
 							<div
 								className="dashboard_bar"
-								style={{ textTransform: "capitalize" }}
+								style={{ textTransform: "capitalize", fontSize: "1.25rem" }}
 							>
 								{finalName.join(" ").length === 0
 									? "Reportes"

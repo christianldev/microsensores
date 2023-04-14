@@ -142,7 +142,7 @@ const Markup = () => {
     { url: 'dashboard', component: <Home /> },
     { url: 'dashboard-light', component: <DashboardLight /> },
     { url: 'event-list', component: <EventList /> },
-    { url: 'event', component: <EventPage /> },
+    { url: 'temperatura-humedad', component: <EventPage /> },
     { url: 'analytics', component: <Analytics /> },
     { url: 'reviews', component: <Reviews /> },
     { url: 'customers', component: <DashboardCustomers /> },

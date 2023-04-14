@@ -3,9 +3,9 @@ import loadable from "@loadable/component";
 import pMinDelay from "p-min-delay";
 import { Link } from 'react-router-dom';
 import { Dropdown } from 'react-bootstrap';
-import EventSlider from './../Karciz/EventPage/EventSlider';
 import card4 from './../../../images/card/4.jpg';
 import ConnectioAWSDynamoDB from '../../../config/aws.config';
+import { ReportButton } from '../ReportButton/ReportButton';
 
 const RevenueChart = loadable(() =>
 	pMinDelay(import("./../Karciz/EventPage/RevenueChart"), 1000)
@@ -38,18 +38,32 @@ const EventPage = () => {
 
 	useEffect(() => {
 		ConnectioAWSDynamoDB({ setDatainfo });
+		// ObtainGeoLocation();
 	}, []);
 
-
+	// const ObtainGeoLocation = () => {
+	// 	navigator.geolocation.getCurrentPosition(function (position) {
+	// 		console.log("Latitude is :", position.coords.latitude);
+	// 		console.log("Longitude is :", position.coords.longitude);
+	// 	});
+	// }
 
 	const { Items } = datainfo;
+
 
 	// filter latest position of Items array 
 	const latestPosition = Items && Items[Items.length - 1];
 
-	const { temperature } = latestPosition || {};
+	const { temperature, humidity } = latestPosition || {};
 
-	const { N } = temperature || {};
+	const { N: temperatura } = temperature || {};
+	const { N: humedad } = humidity || {};
+
+
+	// dejar dos decimales en la humedad y temperatura
+	const temperaturaFormato = temperatura && temperatura.slice(0, 4);
+	const humedadPorcentaje = humedad && humedad.slice(0, 4);
+
 
 
 	return (
@@ -58,7 +72,10 @@ const EventPage = () => {
 				<ol className="breadcrumb">
 					<li className="breadcrumb-item active"><Link to={"#"}>Temperatura</Link></li>
 					<li className="breadcrumb-item"><Link to={"#"}>Reporte de Temperatura </Link></li>
+
 				</ol>
+
+				<ReportButton />
 			</div>
 			<div className="row">
 				<div className="col-xl-9 col-xxl-8">
@@ -257,7 +274,13 @@ const EventPage = () => {
 									<div>
 										<p className="mb-2">Temperatura</p>
 										<h3 className="mb-0 fs-24 font-w600">
-											{N} °C
+											{temperaturaFormato} °C
+										</h3>
+									</div>
+									<div>
+										<p className="mb-2">Humedad</p>
+										<h3 className="mb-0 fs-24 font-w600">
+											{humedadPorcentaje} %
 										</h3>
 									</div>
 								</div>
@@ -266,13 +289,13 @@ const EventPage = () => {
 						<div className="col-xl-12 col-md-6">
 							<div className="card">
 								<div className="card-header border-0 pb-0">
-									<h4 className="fs-20">Best Selling</h4>
+									<h4 className="fs-20">Gráfico por: </h4>
 									<Dropdown>
-										<Dropdown.Toggle variant="" as="div" className="fs-12">This Week</Dropdown.Toggle>
+										<Dropdown.Toggle variant="" as="div" className="fs-12">Esta semana</Dropdown.Toggle>
 										<Dropdown.Menu alignRight={true} className="dropdown-menu-right">
-											<Dropdown.Item >Daily</Dropdown.Item>
-											<Dropdown.Item >Weekly</Dropdown.Item>
-											<Dropdown.Item >Monthly</Dropdown.Item>
+											<Dropdown.Item >Dia</Dropdown.Item>
+											<Dropdown.Item >Semanal</Dropdown.Item>
+											<Dropdown.Item >Mensual</Dropdown.Item>
 										</Dropdown.Menu>
 									</Dropdown>
 								</div>
@@ -285,9 +308,9 @@ const EventPage = () => {
 										<SellingApexChart />
 									</div>
 								</div>
-								<div className="card-footer border-0 p-0">
+								{/* <div className="card-footer border-0 p-0">
 									<Link to={"#"} className="btn btn-primary d-block rounded">Generate Statistic</Link>
-								</div>
+								</div> */}
 							</div>
 						</div>
 						{/* <div className="col-xl-12 col-md-6">
