@@ -37,7 +37,8 @@ const EventPage = () => {
 
 
 	useEffect(() => {
-		ConnectioAWSDynamoDB({ setDatainfo });
+		const { GetTablaTempHumed } = ConnectioAWSDynamoDB({ setDatainfo });
+		GetTablaTempHumed();
 		// ObtainGeoLocation();
 	}, []);
 
@@ -49,6 +50,7 @@ const EventPage = () => {
 	// }
 
 	const { Items } = datainfo;
+
 
 
 	// filter latest position of Items array 
@@ -63,6 +65,7 @@ const EventPage = () => {
 	// dejar dos decimales en la humedad y temperatura
 	const temperaturaFormato = temperatura && temperatura.slice(0, 4);
 	const humedadPorcentaje = humedad && humedad.slice(0, 4);
+
 
 
 

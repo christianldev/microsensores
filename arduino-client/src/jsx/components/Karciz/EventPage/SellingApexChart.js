@@ -7,9 +7,13 @@ const SellingApexChart = () => {
 
 	const [dataInfo, setDatainfo] = React.useState([{
 		name: "Temperatura",
-		time: "2021-05-01T19:00:00.000Z",
-		humidity: 0,
-		temperature: 0,
+		data: [
+			{
+				time: "2021-05-01T19:00:00.000Z",
+				humidity: 0,
+				temperature: 0,
+			}
+		]
 
 	}]);
 	const [options, setOptions] = React.useState({
@@ -112,7 +116,7 @@ const SellingApexChart = () => {
 	}, []);
 
 	const OrderData = (data) => {
-		const { Items } = data;
+
 		dataInfo.map((item) => {
 			console.log(item);
 		}

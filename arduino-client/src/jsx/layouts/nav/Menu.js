@@ -14,7 +14,7 @@ export const MenuList = [
 
             {
                 title: 'Gas',
-                to: 'analytics',
+                to: 'sensor-gas',
 
             },
 

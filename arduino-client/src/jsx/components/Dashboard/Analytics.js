@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import loadable from "@loadable/component";
 import pMinDelay from "p-min-delay";
 import { Link } from 'react-router-dom';
 import TrendingData from './../Karciz/Analytics/TrendingData';
 import HomeTabChart from './../Karciz/Dashboard/HomeTabChart';
 import { DropdownBlogYear, DropdownBlogYear2, DropdownBlogYear3 } from './../Karciz/Dropdown/DropdownBlog';
+import ConnectioAWSDynamoDB from '../../../config/aws.config';
 
 const PieChart = loadable(() =>
 	pMinDelay(import("./../Karciz/Analytics/PieChart"), 1000)
@@ -26,12 +27,41 @@ const ComparisonApexChart = loadable(() =>
 );
 
 const Analytics = () => {
+
+	const [datainfo, setDatainfo] = React.useState([]);
+
+
+
+	useEffect(() => {
+		const { GetTablaSensorGas } = ConnectioAWSDynamoDB({ setDatainfo });
+		GetTablaSensorGas();
+		// ObtainGeoLocation();
+	}, []);
+
+	// const ObtainGeoLocation = () => {
+	// 	navigator.geolocation.getCurrentPosition(function (position) {
+	// 		console.log("Latitude is :", position.coords.latitude);
+	// 		console.log("Longitude is :", position.coords.longitude);
+	// 	});
+	// }
+
+	const { Items } = datainfo;
+	console.log(datainfo);
+
+	// filter latest position of Items array 
+	const latestPosition = Items && Items[Items.length - 1];
+
+	const { propano } = latestPosition || {};
+
+	const { N: gas } = propano || {};
+
+
 	return (
 		<>
 			<div className="page-titles">
 				<ol className="breadcrumb">
 					<li className="breadcrumb-item active"><Link to={"#"}>Dashboard</Link></li>
-					<li className="breadcrumb-item"><Link to={"#"}>Analytics</Link></li>
+					<li className="breadcrumb-item"><Link to={"#"}>Sensor Gas</Link></li>
 				</ol>
 			</div>
 			<div className="row">
@@ -164,10 +194,10 @@ const Analytics = () => {
 								<div className="card-body pb-0">
 									<div className="d-flex align-items-center">
 										<div className="me-auto">
-											<h4 className="fs-20 text-white mb-0">Sales Comparison</h4>
-											<span className="text-white fs-20 font-w300">Than last day</span>
+											<h4 className="fs-20 text-white mb-0">Datos de Sensor</h4>
+											<span className="text-white fs-20 font-w300">Ultimo dia</span>
 										</div>
-										<span className="fs-40 text-white font-w600 me-2">94%</span>
+										<span className="fs-40 text-white font-w600 me-2">{gas}%</span>
 										<svg width="27" height="13" viewBox="0 0 27 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M26.002 13L13.002 1.55023e-07L0.00195312 13" fill="white" />
 										</svg>
