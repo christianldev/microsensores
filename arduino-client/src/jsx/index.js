@@ -130,44 +130,23 @@ import Error403 from "./pages/Error403";
 import Error404 from "./pages/Error404";
 import Error500 from "./pages/Error500";
 import Error503 from "./pages/Error503";
-import Setting from "./layouts/Setting";
+
 import { ThemeContext } from "../context/ThemeContext";
-import Reports from "./pages/Reports";
+
 
 const Markup = () => {
   //const { menuToggle } = useContext(ThemeContext);
   const allroutes = [
     /// Dashboard
-    { url: "", component: <Home /> },
-    { url: 'dashboard', component: <Home /> },
-    { url: 'dashboard-light', component: <DashboardLight /> },
-    { url: 'event-list', component: <EventList /> },
+    { url: "/", component: <EventPage /> },
     { url: 'temperatura-humedad', component: <EventPage /> },
     { url: 'sensor-gas', component: <Analytics /> },
-    { url: 'reviews', component: <Reviews /> },
-    { url: 'customers', component: <DashboardCustomers /> },
-    { url: 'task', component: <Task /> },
-
-    //Demo
-    { url: 'dark-sidebar', component: <Theme1 /> },
-    { url: 'header-secondary', component: <Theme2 /> },
-    { url: 'horizontal-sidebar', component: <Theme4 /> },
-    { url: 'header-style', component: <Theme5 /> },
-    { url: 'mini-sidebar', component: <Theme6 /> },
-
-    //Content
-    { url: 'content', component: <Content /> },
-    { url: 'menu-1', component: <Menu /> },
-    { url: 'email-template', component: <EmailTemplate /> },
-    { url: 'blog', component: <Blog /> },
-
 
     //Customers
     { url: 'chat', component: <Chat /> },
     { url: 'customers-list', component: <CustomersList /> },
 
-    //Reports
-    { url: 'reports', component: <Reports /> },
+
 
     /// Chart
     { url: "chart-sparkline", component: <SparklineChart /> },
@@ -176,33 +155,6 @@ const Markup = () => {
     { url: "chart-apexchart", component: <ApexChart /> },
     { url: "chart-rechart", component: <RechartJs /> },
 
-    /// Bootstrap
-    { url: "ui-alert", component: <UiAlert /> },
-    { url: "ui-badge", component: <UiBadge /> },
-    { url: "ui-button", component: <UiButton /> },
-    { url: "ui-modal", component: <UiModal /> },
-    { url: "ui-button-group", component: <UiButtonGroup /> },
-    { url: "ui-accordion", component: <UiAccordion /> },
-    { url: "ui-list-group", component: <UiListGroup /> },
-    //{ url: "ui-media-object", component: UiMediaObject },
-    { url: "ui-card", component: <UiCards /> },
-    { url: "ui-carousel", component: <UiCarousel /> },
-    { url: "ui-dropdown", component: <UiDropDown /> },
-    { url: "ui-popover", component: <UiPopOver /> },
-    { url: "ui-progressbar", component: <UiProgressBar /> },
-    { url: "ui-tab", component: <UiTab /> },
-    { url: "ui-pagination", component: <UiPagination /> },
-    { url: "ui-typography", component: <UiTypography /> },
-    { url: "ui-grid", component: <UiGrid /> },
-
-    /// Plugin
-    { url: "uc-select2", component: <Select2 /> },
-    //{ url: "uc-nestable", component: Nestable },
-    //{ url: "uc-noui-slider", component: <MainNouiSlider/> },
-    { url: "uc-sweetalert", component: <MainSweetAlert /> },
-    { url: "uc-toastr", component: <Toastr /> },
-    { url: "map-jqvmap", component: <JqvMap /> },
-    { url: "uc-lightgallery", component: <Lightgallery /> },
 
     ///Redux
     { url: "todo", component: <Todo /> },
@@ -211,7 +163,6 @@ const Markup = () => {
 
     /// Widget
     { url: "widget-basic", component: <Widget /> },
-
 
 
     /// Form

@@ -47,13 +47,6 @@ export const MenuList = [
             },
         ]
     },
-    {
-        title: 'Report',
-        to: 'reports',
-
-        iconStyle: <i className="flaticon-381-list" />,
-
-    },
 
 
 ]

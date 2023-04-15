@@ -17,8 +17,8 @@ unsigned long lastMillis = 0;
 unsigned long previousMillis = 0;
 const long interval = 5000;
  
-#define AWS_IOT_PUBLISH_TOPIC   "esp8266/pub"
-#define AWS_IOT_SUBSCRIBE_TOPIC "esp8266/sub"
+#define AWS_IOT_PUBLISH_TOPIC   "esp8266/pub"         //"esp8266/pub"
+#define AWS_IOT_SUBSCRIBE_TOPIC "esp8266/sub"        //"esp8266/sub"
  
 WiFiClientSecure net;
  
@@ -106,10 +106,20 @@ void connectAWS()
 }
  
  
+
 void publishMessage()
 {
   StaticJsonDocument<200> doc;
-  doc["time"] = millis();
+  time_t time_stamp = time(nullptr); // Obtener la marca de tiempo actual
+  doc["time"] = time_stamp;
+
+  // Agregar código de timestamp en formato fecha
+  struct tm * timeinfo;
+  timeinfo = localtime(&time_stamp);
+  char timestamp_buffer[80];
+  strftime(timestamp_buffer, sizeof(timestamp_buffer), "%Y-%m-%d %H:%M:%S", timeinfo);
+  doc["timestamp"] = timestamp_buffer;
+  //doc["time"] = timestamp_buffer;
   doc["humidity"] = h;
   doc["temperature"] = t;
   char jsonBuffer[512];

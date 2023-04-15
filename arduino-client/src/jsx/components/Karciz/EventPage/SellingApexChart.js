@@ -1,19 +1,23 @@
 import React, { useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
-import ConnectioAWSDynamoDB from "../../../../config/aws.config";
 
+import useDynamoDB from "../../../../hooks/useDynamoDB";
+
+const config = process.env;
 
 const SellingApexChart = () => {
 
+	const { data, loading, error } = useDynamoDB('Tabla_Temperatura', {
+		region: config.REACT_APP_AWS_REGION, // Cambia esto por la región en la que se encuentra tu tabla
+		accessKeyId: config.REACT_APP_AWS_ACCESS_KEY_ID, // Cambia esto por tu accessKeyId
+		secretAccessKey: config.REACT_APP_AWS_SECRET_ACCESS_KEY, // Cambia esto por tu secretAccessKey
+		endpoint: config.REACT_APP_AWS_ENDPOINT, // Cambia esto por tu endpoint
+	},
+
+	);
+
 	const [dataInfo, setDatainfo] = React.useState([{
-		name: "Temperatura",
-		data: [
-			{
-				time: "2021-05-01T19:00:00.000Z",
-				humidity: 0,
-				temperature: 0,
-			}
-		]
+
 
 	}]);
 	const [options, setOptions] = React.useState({
@@ -83,23 +87,23 @@ const SellingApexChart = () => {
 				show: false,
 			},
 		},
-		yaxis: {
-			show: true,
+		// yaxis: {
+		// 	show: true,
 
-			labels: {
-				show: true,
-				align: 'right',
-				minWidth: 0,
-				maxWidth: 160,
-				style: {
-					colors: '#787878',
-					fontSize: '11px',
-					fontFamily: 'poppins',
-					fontWeight: 100,
-					cssClass: 'apexcharts-yaxis-label',
-				},
-			},
-		},
+		// 	labels: {
+		// 		show: true,
+		// 		align: 'right',
+		// 		minWidth: 0,
+		// 		maxWidth: 160,
+		// 		style: {
+		// 			colors: '#787878',
+		// 			fontSize: '11px',
+		// 			fontFamily: 'poppins',
+		// 			fontWeight: 100,
+		// 			cssClass: 'apexcharts-yaxis-label',
+		// 		},
+		// 	},
+		// },
 		tooltip: {
 			x: {
 				show: true
@@ -107,21 +111,46 @@ const SellingApexChart = () => {
 		},
 	});
 
+
+
+
+
+
 	useEffect(() => {
 
-		ConnectioAWSDynamoDB({ setDatainfo });
-		OrderData(dataInfo);
 
+		if (data) {
+			setStateData();
+		}
 
 	}, []);
 
-	const OrderData = (data) => {
+	if (loading) {
+		return <div>Cargando...</div>;
+	}
 
-		dataInfo.map((item) => {
-			console.log(item);
-		}
-		)
-	};
+	if (error) {
+		return <div>Error: {error.message}</div>;
+	}
+
+	const setStateData = () => {
+		const { Items } = data;
+		const dataInfo = Items.map((item) => {
+			return {
+				time: item.time,
+				humidity: item.humidity,
+				temperature: item.temperature,
+				timestamp: item.timestamp
+			}
+		});
+		setDatainfo(dataInfo);
+	}
+
+
+
+	console.log(dataInfo);
+
+
 
 
 	return (

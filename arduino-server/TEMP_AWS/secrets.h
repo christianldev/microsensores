@@ -1,9 +1,15 @@
 #include <pgmspace.h>
  
 #define SECRET
- 
+
+ /*
+const char WIFI_SSID[] = "CAMPUSECOTEC";               //TAMIM2.4G
+const char WIFI_PASSWORD[] = "campusecotec";           //0544287380*/
+
+
 const char WIFI_SSID[] = "NETLIFE-VILLAMAR";               //TAMIM2.4G
 const char WIFI_PASSWORD[] = "09092017";           //0544287380
+ 
  
 #define THINGNAME "Objeto_temperatura"
  

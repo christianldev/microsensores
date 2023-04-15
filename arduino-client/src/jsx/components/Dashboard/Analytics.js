@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import TrendingData from './../Karciz/Analytics/TrendingData';
 import HomeTabChart from './../Karciz/Dashboard/HomeTabChart';
 import { DropdownBlogYear, DropdownBlogYear2, DropdownBlogYear3 } from './../Karciz/Dropdown/DropdownBlog';
-import ConnectioAWSDynamoDB from '../../../config/aws.config';
+import ConnectioAWSDynamoDB from '../../../hooks/useDynamoDB';
+import useDynamoDB from '../../../hooks/useDynamoDB';
 
 const PieChart = loadable(() =>
 	pMinDelay(import("./../Karciz/Analytics/PieChart"), 1000)
@@ -25,18 +26,25 @@ const SellingApexChart = loadable(() =>
 const ComparisonApexChart = loadable(() =>
 	pMinDelay(import("./../Karciz/Analytics/ComparisonApexChart"), 1000)
 );
+const config = process.env;
 
 const Analytics = () => {
 
-	const [datainfo, setDatainfo] = React.useState([]);
 
+	const { data, loading, error } = useDynamoDB('Tabla_SensorGas', {
+		region: config.REACT_APP_AWS_REGION, // Cambia esto por la región en la que se encuentra tu tabla
+		accessKeyId: config.REACT_APP_AWS_ACCESS_KEY_ID, // Cambia esto por tu accessKeyId
+		secretAccessKey: config.REACT_APP_AWS_SECRET_ACCESS_KEY, // Cambia esto por tu secretAccessKey
+		endpoint: config.REACT_APP_AWS_ENDPOINT, // Cambia esto por tu endpoint
+	});
 
+	if (loading) {
+		return <div>Cargando...</div>;
+	}
 
-	useEffect(() => {
-		const { GetTablaSensorGas } = ConnectioAWSDynamoDB({ setDatainfo });
-		GetTablaSensorGas();
-		// ObtainGeoLocation();
-	}, []);
+	if (error) {
+		return <div>Error: {error.message}</div>;
+	}
 
 	// const ObtainGeoLocation = () => {
 	// 	navigator.geolocation.getCurrentPosition(function (position) {
@@ -45,15 +53,15 @@ const Analytics = () => {
 	// 	});
 	// }
 
-	const { Items } = datainfo;
-	console.log(datainfo);
+	const { Items } = data;
+	console.log(data);
 
 	// filter latest position of Items array 
 	const latestPosition = Items && Items[Items.length - 1];
 
 	const { propano } = latestPosition || {};
 
-	const { N: gas } = propano || {};
+
 
 
 	return (
@@ -197,7 +205,7 @@ const Analytics = () => {
 											<h4 className="fs-20 text-white mb-0">Datos de Sensor</h4>
 											<span className="text-white fs-20 font-w300">Ultimo dia</span>
 										</div>
-										<span className="fs-40 text-white font-w600 me-2">{gas}%</span>
+										<span className="fs-40 text-white font-w600 me-2">{propano}%</span>
 										<svg width="27" height="13" viewBox="0 0 27 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M26.002 13L13.002 1.55023e-07L0.00195312 13" fill="white" />
 										</svg>

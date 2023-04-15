@@ -42,7 +42,7 @@ function Login(props) {
     <div className="login-main-page" style={{ backgroundImage: "url(" + loginbg + ")" }}>
       <div className="login-wrapper">
         <div className="login-aside-left" style={{ backgroundImage: "url(" + login + ")" }}>
-          <Link to="/dashboard" className="login-logo">
+          <Link to="/temperatura-humedad" className="login-logo">
             <img src={logo} alt="logo"
               style={{ width: "250px", height: "100px" }}
             />

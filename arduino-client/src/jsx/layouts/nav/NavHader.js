@@ -23,7 +23,7 @@ const NavHader = () => {
    //   const { openMenuToggle } = useContext(ThemeContext);
    return (
       <div className="nav-header">
-         <Link to="/dashboard" className="brand-logo">
+         <Link to="/temperatura-humedad" className="brand-logo">
             <img className="logo-abbr" src={logo} alt="" />
             {/*<img className="logo-compact" src={logoText} alt="" />
             <img className="brand-title" src={logoText} alt="" /> */}

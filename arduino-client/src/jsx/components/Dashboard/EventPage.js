@@ -4,8 +4,9 @@ import pMinDelay from "p-min-delay";
 import { Link } from 'react-router-dom';
 import { Dropdown } from 'react-bootstrap';
 import card4 from './../../../images/card/4.jpg';
-import ConnectioAWSDynamoDB from '../../../config/aws.config';
+
 import { ReportButton } from '../ReportButton/ReportButton';
+import useDynamoDB from '../../../hooks/useDynamoDB';
 
 const RevenueChart = loadable(() =>
 	pMinDelay(import("./../Karciz/EventPage/RevenueChart"), 1000)
@@ -29,18 +30,29 @@ const eventTableData = [
 ];
 
 
+const config = process.env;
 
 const EventPage = () => {
 
-	const [datainfo, setDatainfo] = React.useState([]);
+
+	const { data, loading, error } = useDynamoDB('Tabla_Temperatura', {
+		region: config.REACT_APP_AWS_REGION, // Cambia esto por la región en la que se encuentra tu tabla
+		accessKeyId: config.REACT_APP_AWS_ACCESS_KEY_ID, // Cambia esto por tu accessKeyId
+		secretAccessKey: config.REACT_APP_AWS_SECRET_ACCESS_KEY, // Cambia esto por tu secretAccessKey
+		endpoint: config.REACT_APP_AWS_ENDPOINT, // Cambia esto por tu endpoint
+	},
+
+	);
 
 
 
-	useEffect(() => {
-		const { GetTablaTempHumed } = ConnectioAWSDynamoDB({ setDatainfo });
-		GetTablaTempHumed();
-		// ObtainGeoLocation();
-	}, []);
+	if (loading) {
+		return <div>Cargando...</div>;
+	}
+
+	if (error) {
+		return <div>Error: {error.message}</div>;
+	}
 
 	// const ObtainGeoLocation = () => {
 	// 	navigator.geolocation.getCurrentPosition(function (position) {
@@ -49,22 +61,20 @@ const EventPage = () => {
 	// 	});
 	// }
 
-	const { Items } = datainfo;
 
 
+	const { Items } = data || {};
 
 	// filter latest position of Items array 
 	const latestPosition = Items && Items[Items.length - 1];
 
 	const { temperature, humidity } = latestPosition || {};
 
-	const { N: temperatura } = temperature || {};
-	const { N: humedad } = humidity || {};
-
-
 	// dejar dos decimales en la humedad y temperatura
-	const temperaturaFormato = temperatura && temperatura.slice(0, 4);
-	const humedadPorcentaje = humedad && humedad.slice(0, 4);
+	const temperatureFixed = temperature && temperature.toFixed(2);
+	const humidityFixed = humidity && humidity.toFixed(2);
+
+
 
 
 
@@ -277,13 +287,13 @@ const EventPage = () => {
 									<div>
 										<p className="mb-2">Temperatura</p>
 										<h3 className="mb-0 fs-24 font-w600">
-											{temperaturaFormato} °C
+											{temperatureFixed} °C
 										</h3>
 									</div>
 									<div>
 										<p className="mb-2">Humedad</p>
 										<h3 className="mb-0 fs-24 font-w600">
-											{humedadPorcentaje} %
+											{humidityFixed} %
 										</h3>
 									</div>
 								</div>

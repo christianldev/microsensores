@@ -17,7 +17,7 @@ const Error404 = () => {
                 You may have mistyped the address or the page may have moved.
               </p>
               <div>
-                <Link className='btn btn-primary' to='/dashboard'>
+                <Link className='btn btn-primary' to='/temperatura-humedad'>
                   Back to Home
                 </Link>
               </div>
