@@ -1,26 +1,16 @@
-import React, {useRef} from 'react';
-import ReactToPrint from 'react-to-print';
+import React from 'react';
 
-const ExportPdfComponent = () => {
-	const pdfExportComponent = useRef(null);
-
-	const handleExportWithComponent = (event) => {
-		pdfExportComponent.current.save();
-	};
+const ExportPdfComponent = ({handlePrint}) => {
 	return (
 		<div
+			onClick={handlePrint}
 			className="
 			    d-flex flex-column justify-content-end align-items-end
 			">
-			<ReactToPrint
-				content={() => pdfExportComponent.current}
-				trigger={() => (
-					<button className="btn btn-primary">
-						<i className="fas fa-file-pdf m-1"></i>
-						Exportar PDF
-					</button>
-				)}
-			/>
+			<button className="btn btn-primary">
+				<i className="fas fa-file-pdf m-1"></i>
+				Export PDF
+			</button>
 		</div>
 	);
 };

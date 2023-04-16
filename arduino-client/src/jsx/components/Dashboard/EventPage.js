@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useRef } from 'react';
 import loadable from "@loadable/component";
 import pMinDelay from "p-min-delay";
 import { Link } from 'react-router-dom';
@@ -6,8 +6,10 @@ import { Dropdown } from 'react-bootstrap';
 import card4 from './../../../images/card/4.jpg';
 
 
+
 import useDynamoDB from '../../../hooks/useDynamoDB';
 import ExportPdfComponent from '../ExportPdfComponent/ExportPdfComponent';
+import { useReactToPrint } from 'react-to-print';
 
 const RevenueChart = loadable(() =>
 	pMinDelay(import("./../Karciz/EventPage/RevenueChart"), 1000)
@@ -34,6 +36,13 @@ const eventTableData = [
 const config = process.env;
 
 const EventPage = () => {
+
+	const componentRef = useRef();
+	const handlePrint = useReactToPrint({
+		content: () => componentRef.current,
+		documentTitle: 'Reporte de datos',
+		onAfterPrint: () => alert('Se ha generado el reporte'),
+	});
 
 
 	const { data, loading, error } = useDynamoDB('Tabla_Temperatura', {
@@ -79,7 +88,6 @@ const EventPage = () => {
 
 
 
-
 	return (
 		<Fragment>
 			<div className="page-titles">
@@ -89,9 +97,13 @@ const EventPage = () => {
 
 				</ol>
 
-				<ExportPdfComponent />
+				<ExportPdfComponent
+					handlePrint={handlePrint}
+				/>
 			</div>
-			<div className="row">
+			<div
+				ref={componentRef}
+				className="row">
 				<div className="col-xl-9 col-xxl-8">
 					<div className="row">
 						<div className="col-xl-12">
