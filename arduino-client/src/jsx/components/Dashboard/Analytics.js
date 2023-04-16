@@ -202,7 +202,7 @@ const Analytics = () => {
 								<div className="card-body pb-0">
 									<div className="d-flex align-items-center">
 										<div className="me-auto">
-											<h4 className="fs-20 text-white mb-0">Datos de Sensor</h4>
+											<h4 className="fs-20 text-white mb-0">Sensor de Gas</h4>
 											<span className="text-white fs-20 font-w300">Ultimo dia</span>
 										</div>
 										<span className="fs-40 text-white font-w600 me-2">{propano}%</span>

@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 import { Dropdown } from 'react-bootstrap';
 import card4 from './../../../images/card/4.jpg';
 
-import { ReportButton } from '../ReportButton/ReportButton';
+
 import useDynamoDB from '../../../hooks/useDynamoDB';
+import ExportPdfComponent from '../ExportPdfComponent/ExportPdfComponent';
 
 const RevenueChart = loadable(() =>
 	pMinDelay(import("./../Karciz/EventPage/RevenueChart"), 1000)
@@ -88,7 +89,7 @@ const EventPage = () => {
 
 				</ol>
 
-				<ReportButton />
+				<ExportPdfComponent />
 			</div>
 			<div className="row">
 				<div className="col-xl-9 col-xxl-8">

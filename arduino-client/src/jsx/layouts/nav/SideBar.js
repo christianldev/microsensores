@@ -175,7 +175,7 @@ const SideBar = () => {
           })}
         </ul>
         <div className="plus-box">
-          <p className="fs-15 font-w500 mb-1">Get summary report now</p>
+          <p className="fs-15 font-w500 mb-1">Revisar reportes</p>
           <Link to={"#"} className="text-white fs-26"><i className="las la-long-arrow-alt-right"></i></Link>
         </div>
         <div className="copyright">

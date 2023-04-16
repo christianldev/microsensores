@@ -17,7 +17,13 @@ const SellingApexChart = () => {
 	);
 
 	const [dataInfo, setDatainfo] = React.useState([{
-
+		name: 'Temperatura',
+		data: [{
+			time: "2021-05-01T19:00:00.000Z",
+			humidity: 0,
+			temperature: 0,
+			timestamp: 0
+		}]
 
 	}]);
 	const [options, setOptions] = React.useState({
@@ -117,7 +123,7 @@ const SellingApexChart = () => {
 
 
 	useEffect(() => {
-
+		console.log(data);
 
 		if (data) {
 			setStateData();

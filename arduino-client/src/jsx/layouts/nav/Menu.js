@@ -22,31 +22,5 @@ export const MenuList = [
     },
 
 
-    //Charts
-    {
-        title: 'Charts',
-        classsChange: 'mm-collapse',
-        iconStyle: <i className="flaticon-bar-chart-1" />,
-        content: [
-
-            {
-                title: 'RechartJs',
-                to: 'chart-rechart',
-            },
-            {
-                title: 'Chartjs',
-                to: 'chart-chartjs',
-            },
-            {
-                title: 'Sparkline',
-                to: 'chart-sparkline',
-            },
-            {
-                title: 'Apexchart',
-                to: 'chart-apexchart',
-            },
-        ]
-    },
-
 
 ]
