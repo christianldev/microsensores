@@ -23,16 +23,6 @@ const SellingApexChart = loadable(() =>
 
 
 
-const eventTableData = [
-	{ id: '#0012451', date: '04/08/2020 12:34 AM', cname: 'Elisabeth Queen', ticket: '4 Pcs', statusblog: 'NO', },
-	{ id: '#0012452', date: '05/08/2020 11:21 AM', cname: 'Lilibet Queen', ticket: '5 Pcs', statusblog: 'NO', },
-	{ id: '#0012453', date: '07/08/2020 12:15 AM', cname: 'Aquitaine Queen', ticket: '6 Pcs', statusblog: 'YES', },
-	{ id: '#0012454', date: '08/08/2020 10:18 AM', cname: 'Hainault Queen', ticket: '8 Pcs', statusblog: 'NO', },
-	{ id: '#0012455', date: '09/08/2020 11:23 AM', cname: 'Anne Queen', ticket: '9 Pcs', statusblog: 'NO', },
-	{ id: '#0012456', date: '09/08/2020 12:34 AM', cname: 'Victoria Queen', ticket: '2 Pcs', statusblog: 'Yes', },
-];
-
-
 const config = process.env;
 
 const EventPage = () => {
@@ -45,12 +35,14 @@ const EventPage = () => {
 	});
 
 
-	const { data, loading, error } = useDynamoDB('Tabla_Temperatura', {
-		region: config.REACT_APP_AWS_REGION, // Cambia esto por la región en la que se encuentra tu tabla
-		accessKeyId: config.REACT_APP_AWS_ACCESS_KEY_ID, // Cambia esto por tu accessKeyId
-		secretAccessKey: config.REACT_APP_AWS_SECRET_ACCESS_KEY, // Cambia esto por tu secretAccessKey
-		endpoint: config.REACT_APP_AWS_ENDPOINT, // Cambia esto por tu endpoint
-	},
+	const { data, loading, error } = useDynamoDB('Tabla_Temperatura',
+		['temperature', 'humidity']
+		, {
+			region: config.REACT_APP_AWS_REGION, // Cambia esto por la región en la que se encuentra tu tabla
+			accessKeyId: config.REACT_APP_AWS_ACCESS_KEY_ID, // Cambia esto por tu accessKeyId
+			secretAccessKey: config.REACT_APP_AWS_SECRET_ACCESS_KEY, // Cambia esto por tu secretAccessKey
+			endpoint: config.REACT_APP_AWS_ENDPOINT, // Cambia esto por tu endpoint
+		},
 
 	);
 
@@ -72,11 +64,12 @@ const EventPage = () => {
 	// }
 
 
-
 	const { Items } = data || {};
 
 	// filter latest position of Items array 
 	const latestPosition = Items && Items[Items.length - 1];
+
+
 
 	const { temperature, humidity } = latestPosition || {};
 
@@ -85,7 +78,39 @@ const EventPage = () => {
 	const humidityFixed = humidity && humidity.toFixed(2);
 
 
+	const calculateMaxTemperature = () => {
+		const maxTemperature = Items && Items.reduce((prev, current) => (prev.temperature > current.temperature) ? prev : current);
+		return maxTemperature && maxTemperature.temperature.toFixed(2);
+	}
 
+	const calculateMaxHumidity = () => {
+		const maxHumidity = Items && Items.reduce((prev, current) => (prev.humidity > current.humidity) ? prev : current);
+		return maxHumidity && maxHumidity.humidity.toFixed(2);
+	}
+
+	const calculateAverageTemperatureAndHumidity = () => {
+		const averageTemperature = Items && Items.map(item => item.temperature).reduce((prev, current) => prev + current) / Items.length;
+		const averageHumidity = Items && Items.map(item => item.humidity).reduce((prev, current) => prev + current) / Items.length;
+
+		/* convertir a dos decimales */
+		const averageTemperatureFixed = averageTemperature && averageTemperature.toFixed(2);
+		const averageHumidityFixed = averageHumidity && averageHumidity.toFixed(2);
+
+		return {
+			averageTemperatureFixed,
+			averageHumidityFixed
+		}
+	}
+
+	const { averageTemperatureFixed, averageHumidityFixed } = calculateAverageTemperatureAndHumidity();
+
+
+
+	/* convert date to Sunday, 12 June 2020 */
+	const convertDate = (date) => {
+		const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+		return new Date(date).toLocaleDateString('es-ES', options);
+	}
 
 
 	return (
@@ -113,7 +138,7 @@ const EventPage = () => {
 										<img src={card4} alt="" width="280" className="rounded me-0 me-md-4 mb-2 mb-md-0" />
 										<div className="media-body">
 											<div className="d-md-flex d-block justify-content-between">
-												<h4 className="fs-22">The Story of Danau Toba</h4>
+												<h4 className="fs-22">Universidad Ecotec</h4>
 												<Dropdown >
 													<Dropdown.Toggle variant="" as="div" className="custom-dropdown mb-0 d-md-block d-none i-false">
 														<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -141,7 +166,7 @@ const EventPage = () => {
 													<path d="M10.6784 5.99707L9.61133 8.66404H12.227L13.2947 5.99707H10.6784Z" fill="#1f8cf0" />
 													<path d="M1.32296 3.08472L0.779418 3.21342C0.514667 3.27344 0.290587 3.43416 0.148536 3.66493C0.00648451 3.89635 -0.0355306 4.16845 0.0304931 4.43186L0.648715 6.8754V8.66404H2.22394L3.22495 6.16248L3.38767 6.12581L1.32296 3.08472Z" fill="#1f8cf0" />
 												</svg>
-												{" "}Musical Drama Show
+												{" "}Resumen
 											</span>
 											<p className="fs-13 font-w200 text-start">
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
@@ -179,8 +204,12 @@ const EventPage = () => {
 													</defs>
 												</svg>
 												<div className="media-body">
-													<span className="fs-12 d-block mb-1 text-primary">Date</span>
-													<span className="fs-18 text-black">Sunday, 12 June 2020</span>
+													<span className="fs-12 d-block mb-1 text-primary">Ultima actualizacion</span>
+													<span className="fs-15 text-black">
+														{
+															data && data.Items[0] ? data.Items[0].timestamp : convertDate(new Date())
+														}
+													</span>
 												</div>
 											</div>
 										</div>
@@ -198,8 +227,8 @@ const EventPage = () => {
 													</defs>
 												</svg>
 												<div className="media-body">
-													<span className="fs-12 d-block mb-1 text-primary">Location</span>
-													<span className="fs-18 text-black">Indonesa “Sarbini Hall”</span>
+													<span className="fs-12 d-block mb-1 text-primary">Ubicacion</span>
+													<span className="fs-18 text-black">Campus Samborondón</span>
 												</div>
 												<Link to={"#"}>
 													<svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -216,12 +245,18 @@ const EventPage = () => {
 							<div className="card overflow-hidden">
 								<div className="card-header border-0 pb-0">
 									<div>
-										<p className="mb-2">Revenue</p>
-										<h3 className="mb-0 fs-24 font-w600">$124,136</h3>
+										<p className="mb-2">Promedio</p>
+										<h3 className="mb-0 fs-16 font-w600">
+											{
+												averageTemperatureFixed + "°C"
+												+ " / " + averageHumidityFixed + "%"
+											}
+										</h3>
 									</div>
 								</div>
+								<br />
 								<div className="card-body p-0">
-									<div className="col-7 px-0 offset-5 mt-widget">
+									<div className="col-8 px-0 offset-5 mt-widget">
 										<RevenueChart />
 									</div>
 								</div>
@@ -231,8 +266,12 @@ const EventPage = () => {
 							<div className="card overflow-hidden">
 								<div className="card-header border-0 pb-0">
 									<div>
-										<p className="mb-2">Ticket Ordered</p>
-										<h3 className="mb-0 fs-24 font-w600">639 Pcs</h3>
+										<p className="mb-2">% Porc. humedad</p>
+										<h3 className="mb-0 fs-24 font-w600">
+											{
+												calculateMaxHumidity() + "%"
+											}
+										</h3>
 									</div>
 								</div>
 								<div className="card-body p-0">
@@ -246,9 +285,11 @@ const EventPage = () => {
 							<div className="card overflow-hidden bg-image bg-danger" >
 								<div className="card-header  border-0">
 									<div>
-										<p className="mb-2 text-light">Temperatura</p>
+										<p className="mb-2 text-light">Temp. mas alta</p>
 										<h3 className="mb-0 fs-24 font-w600 text-white">
-
+											{
+												calculateMaxTemperature() + "°C"
+											}
 										</h3>
 									</div>
 								</div>

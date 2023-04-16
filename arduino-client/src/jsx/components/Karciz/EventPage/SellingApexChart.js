@@ -7,19 +7,20 @@ const config = process.env;
 
 const SellingApexChart = () => {
 
-	const { data, loading, error } = useDynamoDB('Tabla_Temperatura', {
-		region: config.REACT_APP_AWS_REGION, // Cambia esto por la región en la que se encuentra tu tabla
-		accessKeyId: config.REACT_APP_AWS_ACCESS_KEY_ID, // Cambia esto por tu accessKeyId
-		secretAccessKey: config.REACT_APP_AWS_SECRET_ACCESS_KEY, // Cambia esto por tu secretAccessKey
-		endpoint: config.REACT_APP_AWS_ENDPOINT, // Cambia esto por tu endpoint
-	},
+	const { data, loading, error } = useDynamoDB('Tabla_Temperatura',
+		['temperature', 'humidity',],
+		{
+			region: config.REACT_APP_AWS_REGION, // Cambia esto por la región en la que se encuentra tu tabla
+			accessKeyId: config.REACT_APP_AWS_ACCESS_KEY_ID, // Cambia esto por tu accessKeyId
+			secretAccessKey: config.REACT_APP_AWS_SECRET_ACCESS_KEY, // Cambia esto por tu secretAccessKey
+			endpoint: config.REACT_APP_AWS_ENDPOINT, // Cambia esto por tu endpoint
+		},
 
 	);
 
 	const [dataInfo, setDatainfo] = React.useState([{
 		name: 'Temperatura',
 		data: [{
-			time: "2021-05-01T19:00:00.000Z",
 			humidity: 0,
 			temperature: 0,
 			timestamp: 0
@@ -139,22 +140,26 @@ const SellingApexChart = () => {
 		return <div>Error: {error.message}</div>;
 	}
 
+
 	const setStateData = () => {
 		const { Items } = data;
 		const dataInfo = Items.map((item) => {
 			return {
-				time: item.time,
 				humidity: item.humidity,
 				temperature: item.temperature,
 				timestamp: item.timestamp
 			}
 		});
-		setDatainfo(dataInfo);
+		setDatainfo([{
+			name: 'Temperatura',
+			data: [...dataInfo]
+		}]);
 	}
 
-
-
 	console.log(dataInfo);
+
+
+
 
 
 

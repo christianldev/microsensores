@@ -31,12 +31,14 @@ const config = process.env;
 const Analytics = () => {
 
 
-	const { data, loading, error } = useDynamoDB('Tabla_SensorGas', {
-		region: config.REACT_APP_AWS_REGION, // Cambia esto por la región en la que se encuentra tu tabla
-		accessKeyId: config.REACT_APP_AWS_ACCESS_KEY_ID, // Cambia esto por tu accessKeyId
-		secretAccessKey: config.REACT_APP_AWS_SECRET_ACCESS_KEY, // Cambia esto por tu secretAccessKey
-		endpoint: config.REACT_APP_AWS_ENDPOINT, // Cambia esto por tu endpoint
-	});
+	const { data, loading, error } = useDynamoDB('Tabla_SensorGas',
+		['propano']
+		, {
+			region: config.REACT_APP_AWS_REGION, // Cambia esto por la región en la que se encuentra tu tabla
+			accessKeyId: config.REACT_APP_AWS_ACCESS_KEY_ID, // Cambia esto por tu accessKeyId
+			secretAccessKey: config.REACT_APP_AWS_SECRET_ACCESS_KEY, // Cambia esto por tu secretAccessKey
+			endpoint: config.REACT_APP_AWS_ENDPOINT, // Cambia esto por tu endpoint
+		});
 
 	if (loading) {
 		return <div>Cargando...</div>;
@@ -53,13 +55,14 @@ const Analytics = () => {
 	// 	});
 	// }
 
-	const { Items } = data;
-	console.log(data);
 
-	// filter latest position of Items array 
+	const { Items } = data || {};
+
 	const latestPosition = Items && Items[Items.length - 1];
-
 	const { propano } = latestPosition || {};
+	// filter latest position of Items array 
+
+
 
 
 
